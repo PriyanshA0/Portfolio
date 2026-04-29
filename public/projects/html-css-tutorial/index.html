@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google tag (gtag.js) -->
+ 
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Complete HTML & CSS Tutorial - Hunter Store</title>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div class="container">
+ <header>
+ <h1>📚 Complete HTML & CSS Tutorial</h1>
+ <p class="subtitle">From Absolute Beginner to Advanced Developer</p>
+ </header>
+
+ <nav>
+ <ul>
+ <li><a href="#html-fundamentals">HTML Fundamentals</a></li>
+ <li><a href="#html-structure">Structure & Semantics</a></li>
+ <li><a href="#text-formatting">Text Formatting & Content</a></li>
+ <li><a href="#lists-navigation">Lists & Navigation</a></li>
+ <li><a href="#links-media">Links & Media</a></li>
+ <li><a href="#forms-input">Forms & Input</a></li>
+ <li><a href="#tables-data">Tables & Data</a></li>
+ <li><a href="#css-fundamentals">CSS Fundamentals</a></li>
+ <li><a href="#css-selectors">Selectors & Specificity</a></li>
+ <li><a href="#box-model">Box Model & Spacing</a></li>
+ <li><a href="#layout-techniques">Layout Techniques</a></li>
+ <li><a href="#responsive-design">Responsive Design</a></li>
+ </ul>
+ </nav>
+
+ <section id="html-fundamentals" class="section">
+ <h2 id="html-fundamentals">🌟 SECTION 1: HTML Fundamentals</h2>
+ 
+ <h3>What is HTML?</h3>
+ <p>**HTML (HyperText Markup Language)** is the standard markup language for creating web pages. It describes the structure and content of a webpage using a system of tags and elements.</p>
+ 
+ <div class="tip">
+ **Key Points:**
+ <ul>
+ <li>HTML is NOT a programming language - it's a **markup language**.</li>
+ <li>Browsers read HTML and **render it visually**.</li>
+ <li>HTML provides **structure**, CSS provides style, JavaScript provides behavior.</li>
+ </ul>
+ </div>
+
+ <h3>Basic HTML Document Structure</h3>
+ <div class="example">
+ <div class="example-title">Basic HTML Boilerplate</div>
+ <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+ &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;h1&gt;Hello, World!&lt;/h1&gt;
+ &lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+ </div>
+ 
+ <h3>HTML Tags and Elements</h3>
+ <p>An **element** consists of a start tag, content, and an end tag.</p>
+ <div class="example">
+ <div class="example-title">Element Structure and Self-Closing Tags</div>
+ <pre>// Element Structure:
+&lt;tagname&gt;Content goes here&lt;/tagname&gt;
+
+// Self-Closing Tags (No content, no closing tag):
+&lt;br&gt; &lt;!-- Line break --&gt;
+&lt;hr&gt; &lt;!-- Horizontal rule --&gt;
+&lt;img src="photo.jpg" alt="Description"&gt;
+&lt;input type="text"&gt;</pre>
+ </div>
+
+ <h3>Attributes</h3>
+ <p>Attributes provide extra information about an element and are always placed inside the start tag.</p>
+ <div class="property">
+ <div class="property-name">Attribute Example</div>
+ <pre>&lt;element attribute="value"&gt;Content&lt;/element&gt;</pre>
+ <p>Common attributes: <code>id</code> (unique identifier), <code>class</code> (group identifier for styling), <code>href</code> (link destination), <code>src</code> (source for images/media), <code>alt</code> (alternative text).</p>
+ </div>
+ </section>
+
+ <section id="html-structure" class="section">
+ <h2 id="html-structure">🏗️ SECTION 2: HTML Structure & Semantics</h2>
+ 
+ <h3>Semantic HTML Elements</h3>
+ <p>Semantic elements clearly describe their meaning to both browser (for accessibility and SEO) and developer. Below is a standard page structure:</p>
+ <div class="example">
+ <div class="example-title">Standard Semantic Page Structure</div>
+ <pre>&lt;header&gt;...&lt;/header&gt;
+&lt;nav&gt;...&lt;/nav&gt;
+&lt;main&gt;
+ &lt;article&gt;
+ &lt;h2&gt;Article Title&lt;/h2&gt;
+ &lt;p&gt;Article content...&lt;/p&gt;
+ &lt;/article&gt;
+ 
+ &lt;section&gt;...&lt;/section&gt;
+ 
+ &lt;aside&gt;...&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;...&lt;/footer&gt;</pre>
+ </div>
+
+ <h3>Block vs. Inline Elements</h3>
+ <table>
+ <thead>
+ <tr>
+ <th>Type</th>
+ <th>Characteristics</th>
+ <th>Examples</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>**Block**</td>
+ <td>Takes up full width, starts on a new line, holds other blocks.</td>
+ <td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, <code>&lt;form&gt;</code></td>
+ </tr>
+ <tr>
+ <td>**Inline**</td>
+ <td>Takes only necessary width, stays on same line, holds only inline elements.</td>
+ <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;code&gt;</code></td>
+ </tr>
+ </tbody>
+ </table>
+ 
+ <div class="example">
+ <div class="example-title">Block and Inline Behavior</div>
+ <pre>&lt;div&gt;This is a block element&lt;/div&gt;
+&lt;div&gt;This starts on a new line&lt;/div&gt;
+
+&lt;span&gt;This is inline&lt;/span&gt;
+&lt;span&gt;and stays on same line&lt;/span&gt;</pre>
+ </div>
+ </section>
+ 
+ <section id="text-formatting" class="section">
+ <h2 id="text-formatting">✍️ SECTION 3: Text Formatting & Content</h2>
+ 
+ <h3>Headings (h1 - h6)</h3>
+ <p>Headings define structure and hierarchy. Use them correctly for accessibility and SEO, not just for text size.</p>
+ <div class="example">
+ <div class="example-title">Headings Hierarchy Example</div>
+ <pre>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+&lt;h3&gt;Section Heading&lt;/h3&gt;
+// ... down to h6</pre>
+ </div>
+ 
+ <h3>Text Formatting Tags (Semantic vs. Presentational)</h3>
+ <p>Prefer **semantic tags** (e.g., <code>&lt;strong&gt;</code>) over presentational tags (e.g., <code>&lt;b&gt;</code>) as they convey meaning.</p>
+ <table>
+ <thead>
+ <tr>
+ <th>Tag</th>
+ <th>Purpose (Semantic)</th>
+ <th>Visual Result</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><code>&lt;strong&gt;</code></td>
+ <td>Importance (SEO, Screen Readers)</td>
+ <td>**Bold**</td>
+ </tr>
+ <tr>
+ <td><code>&lt;em&gt;</code></td>
+ <td>Emphasis (Altered Meaning)</td>
+ <td>*Italic*</td>
+ </tr>
+ <tr>
+ <td><code>&lt;code&gt;</code></td>
+ <td>Computer Code Snippet</td>
+ <td><code>Code Font</code></td>
+ </tr>
+ <tr>
+ <td><code>&lt;mark&gt;</code></td>
+ <td>Highlighting/Relevance</td>
+ <td><mark>Highlighted</mark></td>
+ </tr>
+ </tbody>
+ </table>
+ </section>
+
+ <section id="lists-navigation" class="section">
+ <h2 id="lists-navigation">📝 SECTION 4: Lists & Navigation</h2>
+ 
+ <h3>Unordered and Ordered Lists</h3>
+ <div class="example">
+ <div class="example-title">Unordered (Bullets) vs. Ordered (Numbers)</div>
+ <pre>&lt;ul&gt; &lt;!-- Unordered List (default bullets) --&gt;
+ &lt;li&gt;Item 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol type="A"&gt; &lt;!-- Ordered List (Letters) --&gt;
+ &lt;li&gt;Step A&lt;/li&gt;
+ &lt;li value="5"&gt;Starts at 5&lt;/li&gt;
+&lt;/ol&gt;</pre>
+ </div>
+
+ <h3>Nested Lists and Description Lists</h3>
+ <div class="example">
+ <div class="example-title">Description List Structure</div>
+ <pre>&lt;dl&gt;
+ &lt;dt&gt;HTML&lt;/dt&gt; &lt;!-- Term --&gt;
+ &lt;dd&gt;HyperText Markup Language&lt;/dd&gt; &lt;!-- Definition --&gt;
+&lt;/dl&gt;</pre>
+ </div>
+ </section>
+ 
+ <section id="links-media" class="section">
+ <h2 id="links-media">🔗 SECTION 5: Links & Media</h2>
+
+ <h3>Anchor Tags (Links)</h3>
+ <p>The <code>&lt;a&gt;</code> tag creates hyperlinks, using the <code>href</code> attribute for the destination.</p>
+ <div class="example">
+ <div class="example-title">Link Types and Attributes</div>
+ <pre>// External Link (Opens in new tab)
+&lt;a href="https://google.com" target="_blank" rel="noopener noreferrer"&gt;Google&lt;/a&gt;
+
+// Internal Link (Same page jump)
+&lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt;
+
+// Email Link
+&lt;a href="mailto:email@example.com"&gt;Send Email&lt;/a&gt;</pre>
+ </div>
+
+ <h3>Images and Media</h3>
+ <p>The <code>&lt;img&gt;</code> tag is self-closing and uses the <code>src</code> attribute for the image file path.</p>
+ <div class="property">
+ <div class="property-name">Image Attributes Example</div>
+ <pre>&lt;img src="photo.jpg" 
+ alt="Description of image (Required!)" 
+ width="300" 
+ loading="lazy"&gt;</pre>
+ </div>
+ 
+ <h4>Embedding Video and Iframe</h4>
+ <div class="example">
+ <div class="example-title">Audio/Video and Iframe Code</div>
+ <pre>// Basic Video Embed
+&lt;video width="640" controls&gt;
+ &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+// Embed YouTube video (Iframe)
+&lt;iframe width="560" height="315" 
+ src="https://www.youtube.com/embed/..." 
+ frameborder="0" 
+ allowfullscreen&gt;
+&lt;/iframe&gt;</pre>
+ </div>
+ </section>
+ 
+ <section id="forms-input" class="section">
+ <h2 id="forms-input">📋 SECTION 6: Forms & Input</h2>
+ 
+ <h3>Basic Form Structure</h3>
+ <div class="example">
+ <div class="example-title">Form Tags and Attributes</div>
+ <pre>&lt;form action="/submit" method="POST"&gt;
+ &lt;label for="name"&gt;Name:&lt;/label&gt;
+ &lt;input type="text" id="name" name="name" required&gt;
+ 
+ &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
+ <p><code>action</code> is the URL where data is sent. <code>method</code> is usually POST for data submission.</p>
+ </div>
+
+ <h3>Input Types and Validation</h3>
+ <div class="example">
+ <div class="example-title">Validation and Special Inputs</div>
+ <pre>// Password Input with minimum length validation
+&lt;input type="password" minlength="8" required&gt;
+
+// Date Picker
+&lt;input type="date" name="birthday"&gt;
+
+// File Upload (accepting images only)
+&lt;input type="file" name="photo" accept="image/*"&gt;
+
+// Read-only field
+&lt;input type="text" value="Cannot change" readonly&gt;</pre>
+ </div>
+ </section>
+ 
+ <section id="tables-data" class="section">
+ <h2 id="tables-data">📊 SECTION 7: Tables & Data</h2>
+ 
+ <h3>Basic Table Structure</h3>
+ <p>Tables must be used for **tabular data** (like spreadsheets), not for page layout.</p>
+ <div class="example">
+ <div class="example-title">Table Elements: &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</div>
+ <pre>&lt;table&gt;
+ &lt;caption&gt;Monthly Sales Report&lt;/caption&gt;
+ &lt;thead&gt;
+ &lt;tr&gt; &lt;th&gt;Month&lt;/th&gt; &lt;th&gt;Sales&lt;/th&gt; &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt; &lt;td&gt;January&lt;/td&gt; &lt;td&gt;$50,000&lt;/td&gt; &lt;/tr&gt;
+ &lt;/tbody&gt;
+ &lt;tfoot&gt; &lt;!-- Used for totals/summary --&gt;
+ &lt;tr&gt; &lt;th&gt;Total&lt;/th&gt; &lt;td&gt;$110,000&lt;/td&gt; &lt;/tr&gt;
+ &lt;/tfoot&gt;
+&lt;/table&gt;</pre>
+ </div>
+ 
+ <h3>Spanning Rows and Columns</h3>
+ <div class="property">
+ <div class="property-name">Rowspan and Colspan</div>
+ <pre>&lt;th colspan="2"&gt;Name (Spans 2 columns)&lt;/th&gt;
+&lt;td rowspan="2"&gt;Age (Spans 2 rows)&lt;/td&gt;</pre>
+ </div>
+ </section>
+ 
+ <section id="css-fundamentals" class="section">
+ <h2 id="css-fundamentals">🎨 SECTION 8: CSS Fundamentals</h2>
+
+ <h3>What is CSS?</h3>
+ <p>**CSS (Cascading Style Sheets)** controls the visual presentation of HTML elements. It defines colors, fonts, layouts, and spacing.</p>
+ <div class="tip">
+ **Three Pillars of CSS:** Cascading (priority rules), Specificity (selector weight), and Inheritance (properties passed to children).
+ </div>
+
+ <h3>Three Ways to Add CSS (Syntax)</h3>
+ <div class="example">
+ <div class="example-title">External CSS (Best Practice)</div>
+ <pre>&lt;link rel="stylesheet" href="styles.css"&gt;</pre>
+ </div>
+ <div class="example">
+ <div class="example-title">Internal CSS</div>
+ <pre>&lt;style&gt;
+ h1 { color: blue; }
+&lt;/style&gt;</pre>
+ </div>
+ <div class="example">
+ <div class="example-title">Inline CSS (Highest Priority)</div>
+ <pre>&lt;p style="color: red; font-size: 18px;"&gt;Red text&lt;/p&gt;</pre>
+ </div>
+ </section>
+
+ <section id="css-selectors" class="section">
+ <h2 id="css-selectors">🎯 SECTION 9: CSS Selectors & Specificity</h2>
+ 
+ <h3>Basic and Grouping Selectors</h3>
+ <div class="example">
+ <div class="example-title">ID, Class, Element, and Grouping</div>
+ <pre>#header { /* By ID: 100 points */ }
+.btn { /* By Class: 10 points */ }
+p { /* By Element: 1 point */ }
+h1, h2, h3 { /* Grouping */ }</pre>
+ </div>
+
+ <h3>Descendant, Child, and Sibling Selectors</h3>
+ <div class="example">
+ <div class="example-title">Contextual Selectors</div>
+ <pre>/* Selects all &lt;p&gt; inside any &lt;div&gt; */
+div p { color: blue; } 
+
+/* Selects only direct &lt;p&gt; children of &lt;div&gt; */
+div > p { color: red; } 
+
+/* Selects the &lt;p&gt; immediately following an &lt;h1&gt; */
+h1 + p { font-weight: bold; }</pre>
+ </div>
+ 
+ <h3>Specificity Hierarchy (Highest to Lowest)</h3>
+ <table>
+ <thead>
+ <tr>
+ <th>Source</th>
+ <th>Example</th>
+ <th>Points</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Inline Styles</td>
+ <td><code>style="..."</code></td>
+ <td>1000</td>
+ </tr>
+ <tr>
+ <td>ID Selector</td>
+ <td><code>#idName</code></td>
+ <td>100</td>
+ </tr>
+ <tr>
+ <td>Class/Attribute/Pseudo-class</td>
+ <td><code>.class</code>, <code>[type="text"]</code>, <code>:hover</code></td>
+ <td>10</td>
+ </tr>
+ <tr>
+ <td>Element/Pseudo-element</td>
+ <td><code>p</code>, <code>::before</code></td>
+ <td>1</td>
+ </tr>
+ </tbody>
+ </table>
+ <div class="note">
+ **Avoid `!important`:** It overrides all rules and should be used only as a last resort in specific overrides, as it breaks the natural flow of the cascade.
+ </div>
+ </section>
+ 
+ <section id="box-model" class="section">
+ <h2 id="box-model">📦 SECTION 10: Box Model & Spacing</h2>
+ 
+ <h3>The CSS Box Model</h3>
+ <p>Every HTML element is a box composed of four layers: **Content**, **Padding** (inside border), **Border** (Primary Light Green), and **Margin** (outside border).</p>
+ 
+ <div class="tip">
+ **Box-Sizing Fix:** Always use <code>box-sizing: border-box;</code> on the universal selector (<code>*</code>) to ensure that padding and border are included *inside* the element's defined width.
+ </div>
+
+ <h3>Margin and Padding Shorthands</h3>
+ <div class="example">
+ <div class="example-title">Shorthands (Clockwise: Top, Right, Bottom, Left)</div>
+ <pre>// Sets 10px on all 4 sides
+margin: 10px;
+
+// Sets 10px Top/Bottom, 20px Left/Right
+padding: 10px 20px;
+
+// Sets Top: 5px, Right: 10px, Bottom: 15px, Left: 20px
+border-width: 5px 10px 15px 20px;</pre>
+ </div>
+ </section>
+ 
+ <section id="layout-techniques" class="section">
+ <h2 id="layout-techniques">🚀 SECTION 12: Layout Techniques (Flex & Grid)</h2>
+
+ <h3>Flexbox (`display: flex;`)</h3>
+ <p>**Flexbox** is a single-dimension layout model, perfect for distributing space and aligning items along an axis (row or column).</p>
+ 
+ <div class="property">
+ <div class="property-name">Key Flex Properties</div>
+ <p><code>justify-content</code>: Aligns items along the main axis (e.g., <code>space-between</code>, <code>center</code>).</p>
+ <p><code>align-items</code>: Aligns items along the cross axis (perpendicular to the main axis).</p>
+ <p><code>flex-grow</code>: Specifies how much an item should grow relative to the rest.</p>
+ </div>
+
+ <h3>CSS Grid (`display: grid;`)</h3>
+ <p>**CSS Grid** is a two-dimension layout model, excellent for full page layouts and complex component structures (defining both rows and columns).</p>
+ <div class="property">
+ <div class="property-name">Key Grid Properties</div>
+ <p><code>grid-template-columns</code>: Defines column structure (e.g., <code>repeat(3, 1fr)</code>).</p>
+ <p><code>grid-gap</code>: Sets spacing between grid cells.</p>
+ <p><code>grid-area</code> / <code>grid-column</code> / <code>grid-row</code>: Defines element placement.</p>
+ </div>
+ </section>
+ 
+ <section id="responsive-design" class="section">
+ <h2 id="responsive-design">📱 SECTION 13: Responsive Design</h2>
+ 
+ <h3>The Viewport Meta Tag (Mandatory!)</h3>
+ <div class="example">
+ <div class="example-title">Required Tag in &lt;head&gt;</div>
+ <pre>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</pre>
+ <p>This tells the browser to set the viewport width equal to the device width, enabling responsive scaling.</p>
+ </div>
+
+ <h3>Media Queries</h3>
+ <p>Used to apply styles only when certain conditions (like screen size) are met. Essential for adapting layout between mobile and desktop.</p>
+ <div class="example">
+ <div class="example-title">Media Query Example (Mobile First)</div>
+ <pre>/* Default styles for all devices (Mobile First approach) */
+.container { padding: 10px; }
+
+@media (min-width: 768px) {
+ /* Styles applied ONLY when screen is 768px or wider (Tablet/Desktop) */
+ .container { max-width: 1200px; padding: 20px; }
+}</pre>
+ </div>
+ </section>
+
+ <footer>
+ <p>&copy; 2025 Hunter Store | Tutorial by Hunter Store Team | <a href="mailto:Priyanshumishra081@gmail.com">Contact Developer</a></p>
+ </footer>
+ </div>
+ 
+ 
+  <script src="script.js"></script>
+</body>
+</html>

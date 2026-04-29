@@ -1,0 +1,22 @@
+<section class="projects-grid-full">
+  <% projects.forEach((project) => { %>
+    <article class="project-card reveal">
+      <div class="project-media">
+        <img src="/<%= project.image %>" alt="<%= project.title %>">
+      </div>
+      <div class="project-body">
+        <h3><%= project.title %></h3>
+        <p><%= project.summary %></p>
+        <div class="project-tags">
+          <% project.tags.forEach((tag) => { %>
+            <span><%= tag %></span>
+          <% }) %>
+        </div>
+        <div class="project-actions">
+          <a class="btn small" href="/project/<%= project.slug %>">Case Study</a>
+          <a class="btn ghost small" href="<%= project.href %>" target="_blank" rel="noreferrer">Live</a>
+        </div>
+      </div>
+    </article>
+  <% }) %>
+</section>

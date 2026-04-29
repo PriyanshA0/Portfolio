@@ -1,0 +1,15 @@
+<section class="skills-section" id="skills">
+  <div class="section-title reveal">
+    <h2>Skills + Tools</h2>
+    <p>Core languages and stacks I use to build functional, beautiful work.</p>
+  </div>
+  <div class="skills-grid">
+    <% skills.forEach((skill) => { %>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><%= skill.icon %></div>
+        <div class="skill-name"><%= skill.name %></div>
+        <div class="skill-level"><%= skill.level %></div>
+      </div>
+    <% }) %>
+  </div>
+</section>

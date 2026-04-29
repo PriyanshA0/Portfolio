@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JD3GW8VCYK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JD3GW8VCYK');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Basics - VSCode Style | Hunter Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  
+  <link rel="stylesheet" href="../../assets/css/portfolio.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Landing-style top navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="../home/index.html">Hunter Store</a>
+      <div class="nav-links" id="navLinks">
+        <a href="../home/index.html">Home</a>
+        <a href="../about/index.html">About</a>
+        <a href="../practice/index.html">Practice</a>
+        <a href="../basics/index.html" class="active">Code Basics</a>
+        <a href="../javascript-course/index.html">JavaScript</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </nav>
+
+  <!-- Title Bar -->
+  <div class="titlebar">
+    <div class="window-controls">
+      <span class="close"></span>
+      <span class="min"></span>
+      <span class="max"></span>
+    </div>
+    <span>Code Basics — basics.code-workspace</span>
+  </div>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    
+    <!-- Sidebar / Explorer -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        📁 PROBLEM EXPLORER
+      </div>
+      
+      <div class="sidebar-search">
+        <input type="text" id="searchInput" placeholder="Search problems...">
+      </div>
+
+      <div class="filters">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="easy">Easy</button>
+        <button class="filter-chip" data-filter="medium">Medium</button>
+        <button class="filter-chip" data-filter="operators">Operators</button>
+        <button class="filter-chip" data-filter="loops">Loops</button>
+        <button class="filter-chip" data-filter="functions">Functions</button>
+        <button class="filter-chip" data-filter="conditions">Conditions</button>
+        <button class="filter-chip" data-filter="arrays">Arrays</button>
+        <button class="filter-chip" data-filter="strings">Strings</button>
+        <button class="filter-chip" data-filter="oop">OOP</button>
+        <button class="filter-chip" data-filter="solved">✓ Solved</button>
+      </div>
+
+      <div class="problem-list" id="problemList"></div>
+    </aside>
+
+    <!-- Editor Area -->
+    <main class="editor-area">
+      <!-- Tab Bar -->
+      <div class="tab-bar">
+        <div class="tab active">
+          <span class="tab-icon">📄</span>
+          <span id="tabName">welcome.js</span>
+        </div>
+      </div>
+
+      <!-- Editor Content -->
+      <div class="editor-content">
+        <div class="split-view">
+          
+          <!-- Problem Description -->
+          <div class="problem-view" id="problemView">
+            <h2>🚀 Welcome to Code Basics</h2>
+            <p class="desc">
+              Master the fundamentals of programming with 60 curated problems covering operators, loops, functions, 
+              conditionals, arrays, strings, and object-oriented programming. Choose any language — Python, C++, or JavaScript.
+            </p>
+            <div class="section-title">🎯 Getting Started</div>
+            <p class="desc">
+              Select a problem from the explorer on the left to begin. Each problem includes examples, hints, and test cases 
+              to validate your solution. Your progress is automatically saved.
+            </p>
+            <div class="example-box">
+              <div class="label">💡 Pro Tip</div>
+              <p style="color: var(--vscode-text); margin-top: 6px;">
+                Use <code style="color: var(--keyword);">Ctrl+Enter</code> to run code and 
+                <code style="color: var(--keyword);">Ctrl+Shift+Enter</code> to submit.
+              </p>
+            </div>
+          </div>
+
+          <!-- Code Editor -->
+          <div class="code-view">
+            <div class="editor-header">
+              <div class="lang-selector">
+                <button class="lang-btn active" data-lang="javascript">JavaScript</button>
+                <button class="lang-btn" data-lang="python">Python</button>
+                <button class="lang-btn" data-lang="cpp">C++</button>
+              </div>
+              <div class="timer" id="timer">⏱ 00:00</div>
+            </div>
+
+            <div class="code-editor-wrapper">
+              <div class="line-numbers" id="lineNumbers">1</div>
+              <div class="syntax-highlight" id="syntaxHighlight"></div>
+              <textarea 
+                class="code-textarea" 
+                id="codeEditor" 
+                spellcheck="false" 
+                placeholder="// Select a problem to start coding..."></textarea>
+            </div>
+
+            <div class="action-bar">
+              <button class="action-btn btn-run" id="runBtn" disabled>▶ Run Code</button>
+              <button class="action-btn btn-submit" id="submitBtn" disabled>✓ Submit Solution</button>
+              <button class="action-btn btn-reset" id="resetBtn" disabled>↺ Reset</button>
+            </div>
+
+            <div class="output-panel" id="outputPanel">
+              <div class="output-header">⚡ OUTPUT</div>
+              <div class="output-content" id="outputContent"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Status Bar -->
+  <div class="statusbar">
+    <div class="statusbar-item">
+      <span>✓</span>
+      <span id="solvedCount">0</span>
+      <span>/60 Solved</span>
+    </div>
+    <div class="statusbar-item">
+      <span>⭐</span>
+      <span id="xpCount">0</span>
+      <span>XP</span>
+    </div>
+    <div class="statusbar-right">
+      <span id="langStatus">JavaScript</span>
+      <span>UTF-8</span>
+      <span id="lineCol">Ln 1, Col 1</span>
+    </div>
+  </div>
+
+
+  <!-- Landing-style footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h4>Hunter Store</h4>
+        <p>Apps, web projects, and learning resources made for creators.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/practice">Practice</a>
+          <a href="/basics">Code Basics</a>
+        </div>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>Email: hunterappstore24@gmail.com</p>
+        <p>&copy; 2026 Hunter Store</p>
+      </div>
+    </div>
+    <div class="footer-bottom">Built with focus, speed, and clarity.</div>
+  </footer>
+
+  <script src="../../assets/js/portfolio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

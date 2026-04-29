@@ -1,0 +1,14 @@
+<section class="social-section" id="contact">
+  <div class="section-title reveal">
+    <h2>Social Links</h2>
+    <p>Drop a message, follow the work, or hire me for your next idea.</p>
+  </div>
+  <div class="social-grid">
+    <% socials.forEach((social) => { %>
+      <a class="social-card reveal" href="<%= social.url %>" target="_blank" rel="noreferrer">
+        <span class="social-icon"><%= social.icon %></span>
+        <span><%= social.name %></span>
+      </a>
+    <% }) %>
+  </div>
+</section>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Practical Programs</title>
+
+<!-- Highlight.js for syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+
+
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page-header">
+ <h1>Python Practical Programs</h1>
+ <p>Object-Oriented Programming & GUI Development</p>
+ <span class="badge">Python 3.x</span>
+</div>
+
+<!-- Program 1: Hierarchical Inheritance -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">hierarchical_inheritance.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">1</span>
+ <span class="prog-title">Hierarchical Inheritance</span>
+ <p>Multiple derived classes inherit from a single base class.</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">class Animal:
+ def __init__(self, name):
+ self.name = name
+ def sound(self):
+ print(f"{self.name} makes a sound")
+
+class Dog(Animal):
+ def bark(self):
+ print(f"{self.name}: Woof!")
+
+class Cat(Animal):
+ def meow(self):
+ print(f"{self.name}: Meow!")
+
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+dog.sound()
+dog.bark()
+cat.sound()
+cat.meow()</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Buddy makes a sound | Buddy: Woof! | Whiskers makes a sound | Whiskers: Meow!</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>Single parent, multiple children:</strong> Dog and Cat both inherit from Animal</li>
+ <li><strong>Code reusability:</strong> Shared methods in base class, unique methods in derived classes</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 2: Operator Overloading -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">operator_overloading.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">2</span>
+ <span class="prog-title">Operator Overloading</span>
+ <p>Redefine built-in operators for custom classes using magic methods.</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">class Point:
+ def __init__(self, x, y):
+ self.x = x
+ self.y = y
+ def __add__(self, other):
+ return Point(self.x + other.x, self.y + other.y)
+ def __str__(self):
+ return f"({self.x}, {self.y})"
+
+p1 = Point(2, 3)
+p2 = Point(4, 5)
+p3 = p1 + p2
+print(f"p1 = {p1}")
+print(f"p2 = {p2}")
+print(f"p1 + p2 = {p3}")</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">p1 = (2, 3) | p2 = (4, 5) | p1 + p2 = (6, 8)</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>__add__ magic method:</strong> Enables + operator for Point objects</li>
+ <li><strong>__str__ method:</strong> Provides readable string representation</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 3: Abstract Class -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">abstract_class.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">3</span>
+ <span class="prog-title">Abstract Class</span>
+ <p>Cannot be instantiated; forces child classes to implement abstract methods.</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Shape(ABC):
+ @abstractmethod
+ def area(self):
+ pass
+
+class Circle(Shape):
+ def __init__(self, r):
+ self.r = r
+ def area(self):
+ return 3.14 * self.r ** 2
+
+class Square(Shape):
+ def __init__(self, s):
+ self.s = s
+ def area(self):
+ return self.s ** 2
+
+c = Circle(5)
+s = Square(4)
+print(f"Circle area: {c.area()}")
+print(f"Square area: {s.area()}")</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Circle area: 78.5 | Square area: 16</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>ABC module:</strong> Abstract Base Class defines blueprint for other classes</li>
+ <li><strong>@abstractmethod:</strong> Forces child classes to implement the area() method</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 4: GUI Basic Concept -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">gui_basic.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">4</span>
+ <span class="prog-title">GUI (Basic Concept)</span>
+ <p>Graphical user interface using Tkinter for interactive applications.</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">from tkinter import *
+
+def show():
+ result.config(text=f"Hello, {entry.get()}!")
+
+root = Tk()
+root.title("Simple GUI")
+root.geometry("300x150")
+
+Label(root, text="Enter Name:").pack(pady=10)
+entry = Entry(root, width=20)
+entry.pack()
+Button(root, text="Submit", command=show).pack(pady=10)
+result = Label(root, text="")
+result.pack()
+
+root.mainloop()</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Window with entry field and button. Displays: "Hello, [name]!" when submitted</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>Tkinter widgets:</strong> Label, Entry, Button for user interaction</li>
+ <li><strong>Event handling:</strong> Button command triggers show() function</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 5: Calculator using GUI -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">calculator_gui.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">5</span>
+ <span class="prog-title">Calculator using GUI</span>
+ <p>Simple calculator with 2 input boxes and basic arithmetic operations (Add, Sub, Mul, Div).</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">from tkinter import *
+
+def add():
+ result.config(text="Result: " + str(float(num1.get()) + float(num2.get())))
+
+def subtract():
+ result.config(text="Result: " + str(float(num1.get()) - float(num2.get())))
+
+def multiply():
+ result.config(text="Result: " + str(float(num1.get()) * float(num2.get())))
+
+def divide():
+ try:
+ result.config(text="Result: " + str(float(num1.get()) / float(num2.get())))
+ except ZeroDivisionError:
+ result.config(text="Error: Division by zero!")
+
+root = Tk()
+root.title("Calculator")
+root.geometry("300x250")
+
+# Input boxes
+Label(root, text="Number 1:", font=("Arial", 12)).pack(pady=5)
+num1 = Entry(root, font=("Arial", 14), width=20)
+num1.pack(pady=5)
+
+Label(root, text="Number 2:", font=("Arial", 12)).pack(pady=5)
+num2 = Entry(root, font=("Arial", 14), width=20)
+num2.pack(pady=5)
+
+# Operation buttons
+btn_frame = Frame(root)
+btn_frame.pack(pady=10)
+
+Button(btn_frame, text="Add", width=6, command=add).grid(row=0, column=0, padx=5)
+Button(btn_frame, text="Sub", width=6, command=subtract).grid(row=0, column=1, padx=5)
+Button(btn_frame, text="Mul", width=6, command=multiply).grid(row=0, column=2, padx=5)
+Button(btn_frame, text="Div", width=6, command=divide).grid(row=0, column=3, padx=5)
+
+# Result label
+result = Label(root, text="Result: ", font=("Arial", 14), fg="blue")
+result.pack(pady=10)
+
+root.mainloop()</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Calculator window with 2 input boxes and 4 buttons (Add, Sub, Mul, Div). Enter numbers like 10 and 5, click Add to display "Result: 15.0"</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>Entry widgets:</strong> Two input boxes for entering numbers</li>
+ <li><strong>Button commands:</strong> Each operation button calls a specific function</li>
+ <li><strong>Label for output:</strong> Result displayed dynamically using Label.config()</li>
+ <li><strong>Error handling:</strong> Division by zero handled with try-except block</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 6: Tiranga using Canvas -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">tiranga_canvas.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">6</span>
+ <span class="prog-title">Tiranga using Canvas</span>
+ <p>Draw Indian flag with canvas rectangles and Ashoka Chakra.</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">from tkinter import *
+import math
+
+root = Tk()
+root.title("Tiranga")
+c = Canvas(root, width=500, height=350, bg="white")
+c.pack()
+
+c.create_rectangle(50, 50, 450, 150, fill="#FF9933", outline="black")
+c.create_rectangle(50, 150, 450, 250, fill="white", outline="black")
+c.create_rectangle(50, 250, 450, 350, fill="#138808", outline="black")
+
+cx, cy, r = 250, 200, 35
+c.create_oval(cx-r, cy-r, cx+r, cy+r, outline="#000080", width=2)
+for i in range(24):
+ angle = 2 * math.pi * i / 24
+ x = cx + r * math.cos(angle)
+ y = cy + r * math.sin(angle)
+ c.create_line(cx, cy, x, y, fill="#000080")
+
+root.mainloop()</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Indian flag with saffron, white, green stripes. Blue Ashoka Chakra with 24 spokes in center</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>Canvas drawing:</strong> create_rectangle, create_oval, create_line methods</li>
+ <li><strong>Trigonometry:</strong> Math functions to draw 24 evenly-spaced chakra spokes</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 7: Area of Circle -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">circle_area.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">7</span>
+ <span class="prog-title">Area of Circle using Function</span>
+ <p>User-defined function to calculate circle area using formula πr².</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">import math
+
+def circle_area(r):
+ return math.pi * r ** 2
+
+def circle_circumference(r):
+ return 2 * math.pi * r
+
+r = 7
+print(f"Radius: {r}")
+print(f"Area: {circle_area(r):.2f}")
+print(f"Circumference: {circle_circumference(r):.2f}")
+
+r2 = 10
+print(f"\nRadius: {r2}")
+print(f"Area: {circle_area(r2):.2f}")
+print(f"Circumference: {circle_circumference(r2):.2f}")</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Radius: 7 Area: 153.94 Circumference: 43.98 | Radius: 10 Area: 314.16 Circumference: 62.83</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>User-defined functions:</strong> Reusable code blocks for calculations</li>
+ <li><strong>math.pi:</strong> Python's built-in constant for precise π value</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 8: Multilevel Inheritance -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">multilevel_inheritance.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">8</span>
+ <span class="prog-title">Multilevel Inheritance</span>
+ <p>Chain of inheritance: Grandparent → Parent → Child.</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">class Vehicle:
+ def __init__(self, brand):
+ self.brand = brand
+ def start(self):
+ print(f"{self.brand} starting...")
+
+class Car(Vehicle):
+ def __init__(self, brand, model):
+ super().__init__(brand)
+ self.model = model
+ def drive(self):
+ print(f"{self.brand} {self.model} driving")
+
+class ElectricCar(Car):
+ def __init__(self, brand, model, battery):
+ super().__init__(brand, model)
+ self.battery = battery
+ def charge(self):
+ print(f"Charging {self.battery}kWh battery")
+
+ev = ElectricCar("Tesla", "Model 3", 75)
+ev.start()
+ev.drive()
+ev.charge()</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Tesla starting... | Tesla Model 3 driving | Charging 75kWh battery</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>Inheritance chain:</strong> ElectricCar → Car → Vehicle</li>
+ <li><strong>super():</strong> Calls parent class constructor to initialize inherited attributes</li>
+ </ul>
+ </div>
+</div>
+
+<!-- Program 9: OOP Concepts Combined -->
+<div class="program-card">
+ <div class="mac-bar">
+ <div class="dots">
+ <span class="dot red"></span>
+ <span class="dot yellow"></span>
+ <span class="dot green"></span>
+ </div>
+ <span class="filename">oop_combined.py</span>
+ <span class="lang-tag">PYTHON</span>
+ </div>
+ 
+ <div class="prog-header">
+ <span class="prog-number">9</span>
+ <span class="prog-title">OOP Concepts Combined</span>
+ <p>Demonstrates Encapsulation, Inheritance, Polymorphism & Abstraction.</p>
+ </div>
+
+ <div class="code-area">
+ <pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Account(ABC):
+ def __init__(self, holder, balance):
+ self.holder = holder
+ self._balance = balance
+ 
+ def deposit(self, amt):
+ self._balance += amt
+ 
+ @abstractmethod
+ def withdraw(self, amt):
+ pass
+ 
+ def show(self):
+ print(f"{self.holder}: ₹{self._balance}")
+
+class Savings(Account):
+ def withdraw(self, amt):
+ if self._balance - amt >= 1000:
+ self._balance -= amt
+ else:
+ print("Min balance ₹1000 required")
+
+class Current(Account):
+ def withdraw(self, amt):
+ self._balance -= amt
+
+s = Savings("Priyanshu", 5000)
+c = Current("Rahul", 3000)
+
+s.deposit(2000)
+s.withdraw(500)
+s.show()
+
+c.deposit(1000)
+c.withdraw(3500)
+c.show()</code></pre>
+ </div>
+
+ <div class="output-row">
+ <span class="output-label">Output</span>
+ <span class="output-text">Priyanshu: ₹6500 | Rahul: ₹500</span>
+ </div>
+
+ <div class="explanation">
+ <h3>Key Concepts</h3>
+ <ul>
+ <li><strong>Encapsulation:</strong> Protected _balance attribute with controlled access</li>
+ <li><strong>Inheritance:</strong> Savings and Current inherit from Account abstract class</li>
+ <li><strong>Polymorphism:</strong> Different withdraw() implementations in child classes</li>
+ <li><strong>Abstraction:</strong> Abstract Account class defines interface, hides implementation</li>
+ </ul>
+ </div>
+</div>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

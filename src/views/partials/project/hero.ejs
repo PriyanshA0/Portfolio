@@ -1,0 +1,19 @@
+<header class="page-hero project-hero">
+  <div>
+    <span class="eyebrow">Project</span>
+    <h1><%= project.title %></h1>
+    <p><%= project.summary %></p>
+    <div class="project-tags">
+      <% project.tags.forEach((tag) => { %>
+        <span><%= tag %></span>
+      <% }) %>
+    </div>
+    <div class="project-actions">
+      <a class="btn primary" href="<%= project.href %>" target="_blank" rel="noreferrer">Open Live</a>
+      <a class="btn ghost" href="/projects">Back to Projects</a>
+    </div>
+  </div>
+  <div class="project-hero-media">
+    <img src="/<%= project.image %>" alt="<%= project.title %>">
+  </div>
+</header>

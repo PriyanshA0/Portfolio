@@ -1,0 +1,35 @@
+<section class="projects-section" id="projects">
+  <div class="section-title reveal">
+    <h2>Featured Projects</h2>
+    <p>Selected projects mixing bold visuals, smooth UX, and real utility.</p>
+  </div>
+  <div class="carousel">
+    <button class="carousel-btn" data-direction="prev">Prev</button>
+    <div class="carousel-track">
+      <% featuredProjects.forEach((project) => { %>
+        <article class="project-card reveal">
+          <div class="project-media">
+            <img src="/<%= project.image %>" alt="<%= project.title %>">
+          </div>
+          <div class="project-body">
+            <h3><%= project.title %></h3>
+            <p><%= project.summary %></p>
+            <div class="project-tags">
+              <% project.tags.forEach((tag) => { %>
+                <span><%= tag %></span>
+              <% }) %>
+            </div>
+            <div class="project-actions">
+              <a class="btn small" href="/project/<%= project.slug %>">Case Study</a>
+              <a class="btn ghost small" href="<%= project.href %>" target="_blank" rel="noreferrer">Live</a>
+            </div>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+    <button class="carousel-btn" data-direction="next">Next</button>
+  </div>
+  <div class="section-cta reveal">
+    <a class="btn primary" href="/projects">View All Projects</a>
+  </div>
+</section>

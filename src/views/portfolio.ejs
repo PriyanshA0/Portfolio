@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { pageTitle }) %>
+<body>
+  <%- include("partials/nav", { activePage }) %>
+
+  <%- include("partials/portfolio/hero") %>
+  <%- include("partials/portfolio/collage") %>
+  <%- include("partials/portfolio/skills", { skills }) %>
+  <%- include("partials/portfolio/socials", { socials }) %>
+  <%- include("partials/portfolio/featured-projects", { featuredProjects }) %>
+  <%- include("partials/portfolio/cta-banner") %>
+
+  <%- include("partials/footer") %>
+
+  <%- include("partials/scripts") %>
+</body>
+</html>
