@@ -12,356 +12,931 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hunter Store - Apps & Web Projects</title>
-
   <meta name="description" content="Discover uniquely crafted Mobile Apps, Web Projects, and Educational Resources. Learn Python, C++ OOP, HTML/CSS with interactive tutorials and practical examples.">
   <meta name="keywords" content="Hunter Store, Mobile Apps, Web Projects, Python Tutorial, C++ OOP, HTML CSS, Programming, Learning Platform">
   <meta name="author" content="Hunter Store">
-
   <meta property="og:title" content="Hunter Store - Apps & Web Projects">
-  <meta property="og:description" content="Discover uniquely crafted Mobile Apps, Web Projects, and Educational Resources. Learn Python, C++ OOP, HTML/CSS with interactive tutorials.">
+  <meta property="og:description" content="Discover uniquely crafted Mobile Apps, Web Projects, and Educational Resources.">
   <meta property="og:image" content="https://talksy-code.web.app/img/hunter-store-preview.png">
-  <meta property="og:image:secure_url" content="https://talksy-code.web.app/img/hunter-store-preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="Hunter Store - Apps & Web Projects Platform">
   <meta property="og:url" content="https://talksy-code.web.app/">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Hunter Store">
-
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hunter Store - Apps & Web Projects">
-  <meta name="twitter:description" content="Discover uniquely crafted Mobile Apps, Web Projects, and Educational Resources.">
-  <meta name="twitter:image" content="https://talksy-code.web.app/img/hunter-store-preview.png">
-
   <link rel="icon" type="image/png" href="../../icons/web/favicon.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/portfolio.css">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f9f7f2;
+      --white: #ffffff;
+      --ink: #1a1a2e;
+      --muted: #6b6b80;
+      --accent: #f5c518;
+      --accent2: #4f8ef7;
+      --accent3: #ff6b6b;
+      --accent4: #6bcb77;
+      --card-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── NAV ─── */
+    .site-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex; align-items: center; gap: 2rem;
+    }
+    .logo {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800; font-size: 1.35rem;
+      color: var(--ink); white-space: nowrap;
+    }
+    .logo span { color: var(--accent2); }
+    .nav-search {
+      flex: 1; max-width: 340px;
+      display: flex; align-items: center; gap: 0.5rem;
+      background: #f1f0ec; border-radius: 999px;
+      padding: 0.55rem 1rem;
+      border: 1.5px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .nav-search:focus-within { border-color: var(--accent2); background: #fff; }
+    .nav-search input {
+      border: none; background: transparent;
+      font-family: 'Nunito', sans-serif; font-size: 0.9rem;
+      outline: none; width: 100%; color: var(--ink);
+    }
+    .nav-search svg { opacity: 0.4; flex-shrink: 0; }
+    .nav-links {
+      display: flex; align-items: center; gap: 1.4rem;
+      font-weight: 700; font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: var(--muted); transition: color 0.2s;
+      position: relative; padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--accent2);
+      transition: width 0.25s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .btn-login {
+      background: var(--ink); color: #fff;
+      padding: 0.55rem 1.4rem; border-radius: 999px;
+      font-weight: 700; font-size: 0.9rem;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .btn-login:hover { background: var(--accent2); }
+    .nav-toggle {
+      display: none; background: var(--ink); color: #fff;
+      border: none; padding: 0.45rem 1rem;
+      border-radius: 999px; font-weight: 700; cursor: pointer;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--white);
+      padding: 3.5rem 1.5rem 3rem;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: #fff8e1; color: #b07800;
+      font-weight: 700; font-size: 0.78rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 800; line-height: 1.18;
+      margin-bottom: 1.1rem; color: var(--ink);
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent2), #a259ff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      color: var(--muted); font-size: 1rem; line-height: 1.7;
+      max-width: 460px; margin-bottom: 2rem;
+    }
+    .hero-form {
+      display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .hero-form input {
+      flex: 1; min-width: 200px;
+      padding: 0.75rem 1.2rem; border-radius: 999px;
+      border: 1.5px solid #e0ddd5; font-family: inherit;
+      font-size: 0.9rem; outline: none;
+      transition: border-color 0.2s;
+    }
+    .hero-form input:focus { border-color: var(--accent2); }
+    .btn-cta {
+      background: var(--ink); color: #fff;
+      padding: 0.75rem 1.8rem; border-radius: 999px;
+      font-weight: 800; font-size: 0.9rem;
+      border: none; cursor: pointer; transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-cta:hover { background: var(--accent2); }
+    .hero-note { font-size: 0.8rem; color: var(--muted); }
+    .hero-visual {
+      position: relative; display: flex;
+      justify-content: center; align-items: center;
+    }
+    .hero-img-wrap {
+      position: relative;
+      background: linear-gradient(135deg, #e8f4ff, #f0e8ff);
+      border-radius: 28px; overflow: hidden;
+      width: 100%; max-width: 420px;
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-badge {
+      position: absolute; top: -14px; right: -14px;
+      background: var(--accent); color: var(--ink);
+      font-weight: 800; font-size: 0.85rem;
+      padding: 0.65rem 1.2rem; border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(245,197,24,0.35);
+      transform: rotate(4deg);
+    }
+    .hero-badge2 {
+      position: absolute; bottom: -14px; left: -14px;
+      background: var(--white);
+      font-weight: 700; font-size: 0.8rem;
+      padding: 0.6rem 1rem; border-radius: 14px;
+      box-shadow: var(--card-shadow);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent4); }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--white);
+      border-top: 1px solid rgba(0,0,0,0.07);
+      padding: 1.8rem 1.5rem;
+    }
+    .stats-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem; text-align: center;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem; font-weight: 800; color: var(--ink);
+    }
+    .stat-label { color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem; }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 3.5rem 1.5rem; }
+    .section-head {
+      text-align: center; margin-bottom: 2.5rem;
+    }
+    .section-head h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800; color: var(--ink);
+    }
+    .section-head p {
+      color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem;
+    }
+    .inner { max-width: 1200px; margin: 0 auto; }
+
+    /* ─── CATEGORIES ─── */
+    .categories { background: var(--bg); }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+    .cat-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.6rem 1rem;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .cat-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
+    .cat-icon {
+      width: 52px; height: 52px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin: 0 auto 0.8rem;
+    }
+    .cat-card h3 { font-weight: 800; font-size: 0.95rem; }
+    .cat-card span { color: var(--muted); font-size: 0.78rem; }
+
+    /* ─── PROJECT CARDS (App Store style) ─── */
+    .apps-section { background: var(--white); }
+    .projects-section { background: var(--bg); }
+    .tutorials-section { background: var(--white); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.4rem;
+    }
+    .p-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .projects-section .p-card { background: var(--bg); }
+    .p-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.11); }
+    .p-card-img {
+      height: 160px; overflow: hidden;
+      background: linear-gradient(135deg, #e8f0ff, #f5e8ff);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .p-card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .p-card:hover .p-card-img img { transform: scale(1.05); }
+    .p-card-body {
+      padding: 1.1rem 1.2rem 1.3rem;
+      display: flex; flex-direction: column; gap: 0.6rem; flex: 1;
+    }
+    .p-card-body h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+    }
+    .p-card-body p {
+      color: var(--muted); font-size: 0.83rem; line-height: 1.55; flex: 1;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-size: 0.72rem; font-weight: 700;
+      background: #f1ede6; color: var(--muted);
+      padding: 0.2rem 0.6rem; border-radius: 999px;
+    }
+    .p-card-actions { margin-top: auto; padding-top: 0.4rem; }
+    .btn-view {
+      display: inline-block;
+      background: var(--ink); color: #fff;
+      padding: 0.5rem 1.2rem; border-radius: 999px;
+      font-weight: 700; font-size: 0.8rem;
+      transition: background 0.2s;
+    }
+    .btn-view:hover { background: var(--accent2); }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--ink); color: #fff;
+      padding: 2rem 1.5rem;
+    }
+    .trust-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; text-align: center;
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.7rem; justify-content: center; }
+    .trust-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .trust-item h4 { font-weight: 800; font-size: 0.95rem; }
+    .trust-item p { font-size: 0.78rem; opacity: 0.65; margin-top: 0.1rem; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials { background: var(--bg); }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+    .test-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .test-header {
+      display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.9rem;
+    }
+    .test-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent2), #a259ff);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; color: #fff; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .test-name { font-weight: 800; font-size: 0.92rem; }
+    .test-role { color: var(--muted); font-size: 0.78rem; }
+    .stars { color: var(--accent); font-size: 0.85rem; margin-bottom: 0.6rem; }
+    .test-card p { color: var(--muted); font-size: 0.87rem; line-height: 1.6; }
+
+    /* ─── CTA BANNER ─── */
+    .cta-section { padding: 2rem 1.5rem 3.5rem; background: var(--bg); }
+    .cta-banner {
+      max-width: 1100px; margin: 0 auto;
+      background: var(--ink); color: #fff;
+      border-radius: 24px; padding: 2.5rem 3rem;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+    }
+    .cta-banner h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800;
+    }
+    .cta-banner p { opacity: 0.7; margin-top: 0.4rem; font-size: 0.9rem; }
+    .btn-cta-white {
+      background: var(--accent); color: var(--ink);
+      padding: 0.85rem 2rem; border-radius: 999px;
+      font-weight: 800; font-size: 0.95rem; white-space: nowrap;
+      transition: transform 0.2s;
+    }
+    .btn-cta-white:hover { transform: scale(1.04); }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: #12101f; color: #d0cfe8;
+      padding: 3rem 1.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2rem; margin-bottom: 2rem;
+    }
+    .footer-brand .logo { color: #fff; font-size: 1.3rem; }
+    .footer-brand p { margin-top: 0.7rem; font-size: 0.85rem; opacity: 0.6; line-height: 1.6; }
+    .footer-col h5 {
+      font-weight: 800; color: #fff; font-size: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+    .footer-col a {
+      display: block; opacity: 0.6; font-size: 0.85rem;
+      margin-bottom: 0.5rem; transition: opacity 0.2s;
+    }
+    .footer-col a:hover { opacity: 1; }
+    .footer-newsletter input {
+      width: 100%; padding: 0.65rem 1rem;
+      border-radius: 999px; border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08); color: #fff;
+      font-family: inherit; font-size: 0.85rem;
+      outline: none; margin-bottom: 0.6rem;
+    }
+    .footer-newsletter input::placeholder { opacity: 0.45; }
+    .btn-subscribe {
+      width: 100%; background: var(--accent2); color: #fff;
+      padding: 0.65rem 1rem; border-radius: 999px;
+      border: none; font-family: inherit; font-weight: 800;
+      font-size: 0.85rem; cursor: pointer; transition: background 0.2s;
+    }
+    .btn-subscribe:hover { background: #3a7de0; }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.2rem;
+      display: flex; justify-content: space-between;
+      align-items: center; font-size: 0.8rem; opacity: 0.5;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .trust-inner { grid-template-columns: 1fr; gap: 0.8rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-search { max-width: 100%; flex: 1; }
+    }
+    @media (max-width: 560px) {
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+      .cta-banner { padding: 2rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- NAV -->
   <nav class="site-nav">
     <div class="nav-inner">
-      <a class="logo" href="../home/index.html">Hunter Store</a>
+      <a class="logo" href="../home/index.html">Hunter<span>Store</span></a>
+      <div class="nav-search">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" placeholder="Search any project or tutorial...">
+      </div>
       <div class="nav-links" id="navLinks">
         <a href="../home/index.html" class="active">Home</a>
-        <a href="../about/index.html">About</a>
         <a href="#apps">Apps</a>
         <a href="#projects">Projects</a>
+        <a href="#tutorials">Tutorials</a>
         <a href="../practice/index.html">Practice</a>
-        <a href="../basics/index.html">Code Basics</a>
-        <a href="../javascript-course/index.html">JavaScript</a>
+        <a href="../about/index.html">About</a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">Menu</button>
+      <a class="btn-login" href="../about/index.html">Contact</a>
+      <button class="nav-toggle" id="navToggle">Menu</button>
     </div>
   </nav>
 
-  <header class="hero" id="top">
-    <div class="hero-grid">
-      <div class="hero-copy reveal">
-        <span class="eyebrow">Welcome to</span>
-        <h1>Hunter Store</h1>
-        <p class="hero-tagline">Discover uniquely crafted mobile apps, web projects, and learning resources built for speed, clarity, and impact.</p>
-        <div class="hero-actions">
-          <a href="#apps" class="btn primary">Explore Apps</a>
-          <a href="#projects" class="btn ghost">View Projects</a>
-          <a href="../practice/index.html" class="btn ghost">LeetCode Practice</a>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="reveal">
+        <div class="hero-eyebrow">⚡ Welcome to Hunter Store</div>
+        <h1>Build, Learn &amp;<br>Create <em>Amazing</em><br>Projects</h1>
+        <p class="hero-sub">Discover uniquely crafted mobile apps, web projects, and learning resources built for speed, clarity, and impact.</p>
+        <div class="hero-form">
+          <input type="email" placeholder="Enter your email">
+          <button class="btn-cta">Explore Free</button>
         </div>
-        <div class="hero-chips">
-          <span>Apps + Web</span>
-          <span>Learning Resources</span>
-          <span>Built for students</span>
-        </div>
+        <p class="hero-note">✅ 1000+ users across India &nbsp;·&nbsp; No sign-up required</p>
       </div>
-      <div class="hero-photo reveal">
-        <div class="photo-frame">
-          <img src="../../img/hunter-store-preview.png" alt="Hunter Store Preview" onerror="this.src='../../img/project-placeholder.svg'">
-          <div class="photo-badge">Apps + Projects</div>
+      <div class="hero-visual reveal">
+        <div class="hero-img-wrap">
+          <img src="../../img/hunter-store-preview.png" alt="Hunter Store Preview" onerror="this.style.display='none'">
         </div>
-        <div class="hero-stickers">
-          <div class="sticker">Apps</div>
-          <div class="sticker">Web</div>
-          <div class="sticker">Learn</div>
+        <div class="hero-badge">Apps + Projects</div>
+        <div class="hero-badge2">
+          <span class="dot"></span> Live &amp; Active
         </div>
       </div>
     </div>
   </header>
 
-  <section class="collage-section">
-    <div class="section-title reveal">
-      <h2>Platform Stats</h2>
-      <p>What is live right now on Hunter Store.</p>
+  <!-- STATS BAR -->
+  <div class="stats-bar reveal">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Mobile Apps</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Web Projects</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Coding Tutorials</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1K+</div>
+        <div class="stat-label">Users in India</div>
+      </div>
     </div>
-    <div class="collage-grid">
-      <article class="paper-card reveal">
-        <h3>4 Mobile Apps</h3>
-        <p>Utility-first apps designed for daily use.</p>
-      </article>
-      <article class="paper-card reveal">
-        <h3>8 Web Projects</h3>
-        <p>Interactive web experiences and experiments.</p>
-      </article>
-      <article class="paper-card reveal">
-        <h3>3 Tutorials</h3>
-        <p>Guides that teach coding in a friendly way.</p>
-      </article>
-      <article class="paper-card reveal">
-        <h3>1000+ Users</h3>
-        <p>Builders, learners, and creators across India.</p>
-      </article>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="inner">
+      <div class="section-head reveal">
+        <h2>Top Categories</h2>
+        <p>Browse by what you're looking for</p>
+      </div>
+      <div class="cat-grid">
+        <a href="#apps" class="cat-card reveal">
+          <div class="cat-icon" style="background:#e8f4ff;">📱</div>
+          <h3>Mobile Apps</h3>
+          <span>4 Apps</span>
+        </a>
+        <a href="#projects" class="cat-card reveal">
+          <div class="cat-icon" style="background:#fff0e8;">🌐</div>
+          <h3>Web Projects</h3>
+          <span>8 Projects</span>
+        </a>
+        <a href="#tutorials" class="cat-card reveal">
+          <div class="cat-icon" style="background:#e8ffe8;">📚</div>
+          <h3>Tutorials</h3>
+          <span>Python, C++, JS</span>
+        </a>
+        <a href="../practice/index.html" class="cat-card reveal">
+          <div class="cat-icon" style="background:#f5e8ff;">💻</div>
+          <h3>Practice</h3>
+          <span>LeetCode Style</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <section class="skills-section" id="apps">
-    <div class="section-title reveal">
-      <h2>Mobile Apps</h2>
-      <p>Innovative applications designed for seamless digital experience.</p>
-    </div>
-    <div class="projects-grid-full">
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/foodshare/1.jpeg" alt="Food Share">
-        </div>
-        <div class="project-body">
-          <h3>Food Share</h3>
-          <p>A community-driven app for sharing surplus food and connecting neighbors.</p>
-          <div class="project-tags"><span>Community</span><span>Utility</span><span>Mobile</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/food-share/">View Details</a>
+  <!-- MOBILE APPS -->
+  <section class="apps-section" id="apps">
+    <div class="inner">
+      <div class="section-head reveal">
+        <h2>Mobile Apps</h2>
+        <p>Innovative applications designed for seamless digital experience</p>
+      </div>
+      <div class="cards-grid">
+
+        <article class="p-card reveal">
+          <div class="p-card-img">
+            <img src="../../img/foodshare/1.jpeg" alt="Food Share" onerror="this.style.display='none'">
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../icons/html.png" alt="Hunter HTML Code Editor">
-        </div>
-        <div class="project-body">
-          <h3>Hunter HTML Code Editor</h3>
-          <p>Practice HTML, CSS, and JS easily on mobile with live preview.</p>
-          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/hunter-html-editor/">View Details</a>
+          <div class="p-card-body">
+            <h3>Food Share</h3>
+            <p>A community-driven app for sharing surplus food and connecting neighbors.</p>
+            <div class="tags"><span class="tag">Community</span><span class="tag">Utility</span><span class="tag">Mobile</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/food-share/">View Details</a>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../icons/talksy.png" alt="TalkSy">
-        </div>
-        <div class="project-body">
-          <h3>TalkSy</h3>
-          <p>A social media app to share thoughts and connect with communities.</p>
-          <div class="project-tags"><span>Social</span><span>Community</span><span>Mobile</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/talksy/">View Details</a>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img">
+            <img src="../../icons/html.png" alt="Hunter HTML Editor" onerror="this.style.display='none'">
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="/img/project-placeholder.svg" alt="Find The Monsters">
-        </div>
-        <div class="project-body">
-          <h3>Find The Monsters</h3>
-          <p>Fast-paced memory game with monster cards and score battles.</p>
-          <div class="project-tags"><span>Game</span><span>Memory</span><span>Mobile</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/find-monsters/">View Details</a>
+          <div class="p-card-body">
+            <h3>Hunter HTML Code Editor</h3>
+            <p>Practice HTML, CSS, and JS easily on mobile with live preview.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/hunter-html-editor/">View Details</a>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/Merge_and_double/merge1.jpeg" alt="Merge And Double">
-        </div>
-        <div class="project-body">
-          <h3>Merge And Double</h3>
-          <p>Number merging puzzle that challenges logic and focus.</p>
-          <div class="project-tags"><span>Puzzle</span><span>Logic</span><span>Mobile</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/merge-and-double/">View Details</a>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img">
+            <img src="../../icons/talksy.png" alt="TalkSy" onerror="this.style.display='none'">
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/fun/fun1.jpeg" alt="Fun Learn">
-        </div>
-        <div class="project-body">
-          <h3>Fun Learn</h3>
-          <p>Math game for kids with fun visuals and interactive lessons.</p>
-          <div class="project-tags"><span>Kids</span><span>Education</span><span>Mobile</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/fun-learn/">View Details</a>
+          <div class="p-card-body">
+            <h3>TalkSy</h3>
+            <p>A social media app to share thoughts and connect with communities.</p>
+            <div class="tags"><span class="tag">Social</span><span class="tag">Community</span><span class="tag">Mobile</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/talksy/">View Details</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background: linear-gradient(135deg,#fff3cd,#ffe0a0);">
+            <span style="font-size:3rem;">👾</span>
+          </div>
+          <div class="p-card-body">
+            <h3>Find The Monsters</h3>
+            <p>Fast-paced memory game with monster cards and score battles.</p>
+            <div class="tags"><span class="tag">Game</span><span class="tag">Memory</span><span class="tag">Mobile</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/find-monsters/">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img">
+            <img src="../../img/Merge_and_double/merge1.jpeg" alt="Merge And Double" onerror="this.style.display='none'">
+          </div>
+          <div class="p-card-body">
+            <h3>Merge And Double</h3>
+            <p>Number merging puzzle that challenges logic and focus.</p>
+            <div class="tags"><span class="tag">Puzzle</span><span class="tag">Logic</span><span class="tag">Mobile</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/merge-double/">View Details</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img">
+            <img src="../../img/fun/fun1.jpeg" alt="Fun Learn" onerror="this.style.display='none'">
+          </div>
+          <div class="p-card-body">
+            <h3>Fun Learn</h3>
+            <p>Math game for kids with fun visuals and interactive lessons.</p>
+            <div class="tags"><span class="tag">Kids</span><span class="tag">Education</span><span class="tag">Mobile</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/fun-learn/">View Details</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item reveal">
+        <div class="trust-icon" style="background:rgba(79,142,247,0.2);">🏆</div>
+        <div>
+          <h4>Handcrafted Projects</h4>
+          <p>Every project built from scratch</p>
+        </div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon" style="background:rgba(107,203,119,0.2);">🎥</div>
+        <div>
+          <h4>Live &amp; Interactive</h4>
+          <p>Try apps &amp; projects instantly</p>
+        </div>
+      </div>
+      <div class="trust-item reveal">
+        <div class="trust-icon" style="background:rgba(255,107,107,0.2);">🎓</div>
+        <div>
+          <h4>Learn by Doing</h4>
+          <p>1000+ students across India</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEB PROJECTS -->
   <section class="projects-section" id="projects">
-    <div class="section-title reveal">
-      <h2>Web Projects</h2>
-      <p>Cutting-edge web development projects utilizing modern technologies.</p>
-    </div>
-    <div class="projects-grid-full">
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="/img/project-placeholder.svg" alt="HTML/CSS Tutorial Guide">
-        </div>
-        <div class="project-body">
-          <h3>HTML/CSS Tutorial Guide</h3>
-          <p>Interactive guide covering all core concepts of HTML and CSS.</p>
-          <div class="project-tags"><span>HTML5</span><span>CSS3</span><span>Tutorial</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/html-css-tutorial/">View Project</a>
+    <div class="inner">
+      <div class="section-head reveal">
+        <h2>Web Projects</h2>
+        <p>Cutting-edge web development projects utilizing modern technologies</p>
+      </div>
+      <div class="cards-grid">
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">
+            <span style="font-size:3rem;">📖</span>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/bubble/1.jpg" alt="Bubble Pixel ART" onerror="this.src='../../img/project-placeholder.svg'">
-        </div>
-        <div class="project-body">
-          <h3>Bubble Pixel ART</h3>
-          <p>Convert images into attractive circular bubble-style pixel art.</p>
-          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/bubble-pixel/">View Project</a>
+          <div class="p-card-body">
+            <h3>HTML/CSS Tutorial Guide</h3>
+            <p>Interactive guide covering all core concepts of HTML and CSS.</p>
+            <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tutorial</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/html-css-tutorial/">View Project</a>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/project-placeholder.svg" alt="Video Chat (P2P)">
-        </div>
-        <div class="project-body">
-          <h3>Video Chat (P2P)</h3>
-          <p>Peer-to-peer video chat using WebRTC and sockets.</p>
-          <div class="project-tags"><span>WebRTC</span><span>Node.js</span><span>WebSockets</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="http://sign-video-chat.web.app/" target="_blank" rel="noreferrer">View Project</a>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img">
+            <img src="../../img/bubble/1.jpg" alt="Bubble Pixel ART" onerror="this.style.display='none'">
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/project-placeholder.svg" alt="Webcam Emoji Filter">
-        </div>
-        <div class="project-body">
-          <h3>Webcam Emoji Filter</h3>
-          <p>Live camera filter that reacts to hand symbols with emojis.</p>
-          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="https://web-cam-62e40.web.app/" target="_blank" rel="noreferrer">View Project</a>
+          <div class="p-card-body">
+            <h3>Bubble Pixel ART</h3>
+            <p>Convert images into attractive circular bubble-style pixel art.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/bubble-pixel/">View Project</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
+            <span style="font-size:3rem;">📹</span>
+          </div>
+          <div class="p-card-body">
+            <h3>Video Chat (P2P)</h3>
+            <p>Peer-to-peer video chat using WebRTC and sockets.</p>
+            <div class="tags"><span class="tag">WebRTC</span><span class="tag">Node.js</span><span class="tag">WebSockets</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="http://sign-video-chat.web.app/" target="_blank" rel="noreferrer">View Project</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">
+            <span style="font-size:3rem;">😎</span>
+          </div>
+          <div class="p-card-body">
+            <h3>Webcam Emoji Filter</h3>
+            <p>Live camera filter that reacts to hand symbols with emojis.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="https://web-cam-62e40.web.app/" target="_blank" rel="noreferrer">View Project</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
-  <section class="skills-section" id="tutorials">
-    <div class="section-title reveal">
-      <h2>Educational Tutorials</h2>
-      <p>Programming guides with hands-on examples and curated paths.</p>
-    </div>
-    <div class="projects-grid-full">
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/project-placeholder.svg" alt="Python Programming Guide">
-        </div>
-        <div class="project-body">
-          <h3>Python Programming Guide</h3>
-          <p>Practical Python programs covering fundamentals and real use cases.</p>
-          <div class="project-tags"><span>Python</span><span>Programming</span><span>Tutorial</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/python-guide/">View Guide</a>
+  <!-- TUTORIALS -->
+  <section class="tutorials-section" id="tutorials">
+    <div class="inner">
+      <div class="section-head reveal">
+        <h2>Educational Tutorials</h2>
+        <p>Programming guides with hands-on examples and curated learning paths</p>
+      </div>
+      <div class="cards-grid">
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#fff8e1,#fff3cd);">
+            <span style="font-size:3rem;">🐍</span>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/project-placeholder.svg" alt="OOP C++ Practical Programs">
-        </div>
-        <div class="project-body">
-          <h3>OOP C++ Practical Programs</h3>
-          <p>Learn OOP with hands-on examples covering classes and inheritance.</p>
-          <div class="project-tags"><span>C++</span><span>OOP</span><span>Tutorial</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../../projects/cpp-oop/">View Guide</a>
+          <div class="p-card-body">
+            <h3>Python Programming Guide</h3>
+            <p>Practical Python programs covering fundamentals and real use cases.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Programming</span><span class="tag">Tutorial</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/python-guide/">View Guide</a>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/project-placeholder.svg" alt="JavaScript Complete Course">
-        </div>
-        <div class="project-body">
-          <h3>JavaScript Complete Course</h3>
-          <p>50 lessons from fundamentals to advanced topics.</p>
-          <div class="project-tags"><span>JavaScript</span><span>Course</span><span>Beginner</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../javascript-course/index.html">Start Course</a>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);">
+            <span style="font-size:3rem;">⚙️</span>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/project-placeholder.svg" alt="Code Basics - VSCode Style">
-        </div>
-        <div class="project-body">
-          <h3>Code Basics - VSCode Style</h3>
-          <p>60 beginner-friendly questions in a VSCode-like interface.</p>
-          <div class="project-tags"><span>JavaScript</span><span>Python</span><span>C++</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../basics/index.html">Start Learning</a>
+          <div class="p-card-body">
+            <h3>OOP C++ Practical Programs</h3>
+            <p>Learn OOP with hands-on examples covering classes and inheritance.</p>
+            <div class="tags"><span class="tag">C++</span><span class="tag">OOP</span><span class="tag">Tutorial</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../../projects/cpp-oop/">View Guide</a>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="project-card reveal">
-        <div class="project-media">
-          <img src="../../img/project-placeholder.svg" alt="LeetCode Practice">
-        </div>
-        <div class="project-body">
-          <h3>LeetCode Practice - Terminal Style</h3>
-          <p>60 coding problems with XP tracking and test validation.</p>
-          <div class="project-tags"><span>DSA</span><span>Algorithms</span><span>Practice</span></div>
-          <div class="project-actions">
-            <a class="btn small" href="../practice/index.html">Start Coding</a>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#fffde7,#fff9c4);">
+            <span style="font-size:3rem;">⚡</span>
           </div>
-        </div>
-      </article>
+          <div class="p-card-body">
+            <h3>JavaScript Complete Course</h3>
+            <p>50 lessons from fundamentals to advanced topics with live examples.</p>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Course</span><span class="tag">Beginner</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../javascript-course/index.html">Start Course</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2);">
+            <span style="font-size:3rem;">🖥️</span>
+          </div>
+          <div class="p-card-body">
+            <h3>Code Basics – VSCode Style</h3>
+            <p>60 beginner-friendly questions in a VSCode-like interface.</p>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">C++</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../basics/index.html">Start Learning</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="p-card reveal">
+          <div class="p-card-img" style="background:linear-gradient(135deg,#fbe9e7,#ffccbc);">
+            <span style="font-size:3rem;">🏆</span>
+          </div>
+          <div class="p-card-body">
+            <h3>LeetCode Practice – Terminal Style</h3>
+            <p>60 coding problems with XP tracking and test validation.</p>
+            <div class="tags"><span class="tag">DSA</span><span class="tag">Algorithms</span><span class="tag">Practice</span></div>
+            <div class="p-card-actions">
+              <a class="btn-view" href="../practice/index.html">Start Coding</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="inner">
+      <div class="section-head reveal">
+        <h2>What Users Say</h2>
+        <p>Feedback from students and developers using Hunter Store</p>
+      </div>
+      <div class="test-grid">
+
+        <div class="test-card reveal">
+          <div class="test-header">
+            <div class="test-avatar">R</div>
+            <div>
+              <div class="test-name">Rahul M.</div>
+              <div class="test-role">CS Student, Pune</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>The JavaScript course is incredibly structured. The VSCode-style interface makes it feel like real coding. Loved it!</p>
+        </div>
+
+        <div class="test-card reveal">
+          <div class="test-header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ff8e53);">P</div>
+            <div>
+              <div class="test-name">Priya S.</div>
+              <div class="test-role">App Developer</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>TalkSy is a really cool concept. The Hunter HTML Editor on mobile is super handy for quick experiments on the go.</p>
+        </div>
+
+        <div class="test-card reveal">
+          <div class="test-header">
+            <div class="test-avatar" style="background:linear-gradient(135deg,#6bcb77,#4a9b53);">A</div>
+            <div>
+              <div class="test-name">Arjun K.</div>
+              <div class="test-role">Engineering Student</div>
+            </div>
+          </div>
+          <div class="stars">★★★★☆</div>
+          <p>The LeetCode practice section is awesome. Terminal style makes it feel authentic. C++ OOP guide is beginner-perfect.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-section">
+    <div class="cta-banner reveal">
+      <div>
+        <h2>Start Exploring Hunter Store Today</h2>
+        <p>Apps, web experiments, and coding tutorials — all in one place.</p>
+      </div>
+      <a class="btn-cta-white" href="#apps">Browse Projects →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div>
-        <h4>Hunter Store</h4>
-        <p>Apps, web projects, and learning resources made for creators.</p>
+      <div class="footer-brand">
+        <div class="logo">Hunter<span style="color:#4f8ef7;">Store</span></div>
+        <p>Apps, web projects, and learning resources made for creators and students across India.</p>
       </div>
-      <div>
-        <h5>Quick Links</h5>
-        <div class="footer-links">
-          <a href="#apps">Apps</a>
-          <a href="#projects">Projects</a>
-          <a href="../about/index.html">About</a>
-          <a href="../practice/index.html">Practice</a>
-        </div>
+      <div class="footer-col">
+        <h5>Menu</h5>
+        <a href="#apps">Apps</a>
+        <a href="#projects">Projects</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="../practice/index.html">Practice</a>
       </div>
-      <div>
-        <h5>Contact</h5>
-        <p>Email: hunterappstore24@gmail.com</p>
-        <p>&copy; 2026 Hunter Store</p>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="../about/index.html">About</a>
+        <a href="../home/index.html">Home</a>
+        <a href="../javascript-course/index.html">JS Course</a>
+        <a href="../basics/index.html">Code Basics</a>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Stay Updated</h5>
+        <input type="email" placeholder="Enter your email">
+        <button class="btn-subscribe">Subscribe Now</button>
       </div>
     </div>
-    <div class="footer-bottom">Built with focus, speed, and clarity.</div>
+    <div class="footer-bottom">
+      <span>📧 hunterappstore24@gmail.com</span>
+      <span>© 2026 Hunter Store. Built with focus, speed &amp; clarity.</span>
+    </div>
   </footer>
 
-  <script src="../../assets/js/portfolio.js"></script>
-  <script src="script.js"></script>
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+
+    // Mobile nav toggle
+    document.getElementById('navToggle')?.addEventListener('click', () => {
+      document.getElementById('navLinks')?.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
