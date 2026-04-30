@@ -1,14 +1,10 @@
 {
   "rewrites": [
-    { "source": "/",                    "destination": "/public/pages/home/index.html" },
-    { "source": "/home",                "destination": "/public/pages/home/index.html" },
-    { "source": "/about",               "destination": "/public/pages/about/index.html" },
-    { "source": "/about/index.html",    "destination": "/public/pages/about/index.html" },
-    { "source": "/practice",            "destination": "/public/pages/practice/index.html" },
-    { "source": "/practice/index.html", "destination": "/public/pages/practice/index.html" },
-    { "source": "/basics",              "destination": "/public/pages/basics/index.html" },
-    { "source": "/basics/index.html",   "destination": "/public/pages/basics/index.html" },
-    { "source": "/javascript-course",            "destination": "/public/pages/javascript-course/index.html" },
-    { "source": "/javascript-course/index.html", "destination": "/public/pages/javascript-course/index.html" }
+    { "source": "/", "destination": "/public/pages/home/index.html" },
+    { "source": "/home", "destination": "/public/pages/home/index.html" },
+    { "source": "/about", "destination": "/public/pages/about/index.html" },
+    { "source": "/practice", "destination": "/public/pages/practice/index.html" },
+    { "source": "/basics", "destination": "/public/pages/basics/index.html" },
+    { "source": "/javascript-course", "destination": "/public/pages/javascript-course/index.html" }
   ]
 }
