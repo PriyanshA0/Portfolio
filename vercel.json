@@ -1,10 +1,20 @@
 {
   "rewrites": [
     { "source": "/", "destination": "/pages/home/index.html" },
+
     { "source": "/home", "destination": "/pages/home/index.html" },
+    { "source": "/home/", "destination": "/pages/home/index.html" },
+
     { "source": "/about", "destination": "/pages/about/index.html" },
+    { "source": "/about/", "destination": "/pages/about/index.html" },
+
     { "source": "/practice", "destination": "/pages/practice/index.html" },
+    { "source": "/practice/", "destination": "/pages/practice/index.html" },
+
     { "source": "/basics", "destination": "/pages/basics/index.html" },
-    { "source": "/javascript-course", "destination": "/pages/javascript-course/index.html" }
+    { "source": "/basics/", "destination": "/pages/basics/index.html" },
+
+    { "source": "/javascript-course", "destination": "/pages/javascript-course/index.html" },
+    { "source": "/javascript-course/", "destination": "/pages/javascript-course/index.html" }
   ]
 }
