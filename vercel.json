@@ -1,10 +1,15 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/public/pages/home/index.html" },
-    { "source": "/home", "destination": "/public/pages/home/index.html" },
-    { "source": "/about", "destination": "/public/pages/about/index.html"},
-    { "source": "/practice", "destination": "/public/pages/practice/index.html" },
-    { "source": "/basics", "destination": "/public/pages/basics/index.html" },
-    { "source": "/javascript-course", "destination": "/public/pages/javascript-course/index.html" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/server.js"
+    }
   ]
 }
