@@ -264,3 +264,4 @@ portfolio-v2/
 - Build the tech stack section
 - Configure SEO metadata
 - Create the contact form
+# and Done
