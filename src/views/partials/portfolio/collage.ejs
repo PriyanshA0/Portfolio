@@ -6,20 +6,38 @@
   <div class="collage-grid">
     <article class="paper-card reveal">
       <h3>About Me</h3>
-      <p>I am a 20-year-old creator who loves mixing art, code, and motion to shape memorable digital experiences. I focus on expressive visuals that still feel functional and clean.</p>
+      <% if (profile && profile.about) { %>
+        <% profile.about.forEach(function(p){ %>
+          <p><%= p %></p>
+        <% }) %>
+      <% } else { %>
+        <p>Brief info about you goes here. Replace these placeholder lines with your bio.</p>
+      <% } %>
     </article>
     <article class="paper-card reveal">
       <h3>Education</h3>
-      <p>School of the Good Shepherd, Trivandrum. Currently pursuing B.Des (Communication Design) at Symbiosis Institute of Design, Pune.</p>
+      <% if (profile && profile.education) { %>
+        <% profile.education.forEach(function(edu){ %>
+          <p><strong><%= edu.school %></strong> — <%= edu.degree %> <span class="muted">(<%= edu.years %>)</span></p>
+        <% }) %>
+      <% } else { %>
+        <p>Your educational background goes here.</p>
+      <% } %>
     </article>
     <article class="paper-card reveal">
       <h3>Interests</h3>
-      <ul>
-        <li>Football & gaming</li>
-        <li>Illustration & motion</li>
-        <li>Travel & culture</li>
-        <li>Dance & rhythm</li>
-      </ul>
+      <% if (profile && profile.interests) { %>
+        <ul>
+          <% profile.interests.forEach(function(i){ %>
+            <li><%= i %></li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <ul>
+          <li>Interest one</li>
+          <li>Interest two</li>
+        </ul>
+      <% } %>
     </article>
   </div>
 </section>

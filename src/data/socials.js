@@ -1,13 +1,13 @@
 module.exports = [
   {
+    name: "GitHub",
+    url: "https://github.com/your-username",
+    icon: "GH",
+  },
+  {
     name: "X",
     url: "https://x.com/your-handle",
     icon: "X",
-  },
-  {
-    name: "Instagram",
-    url: "https://instagram.com/your-handle",
-    icon: "IG",
   },
   {
     name: "LinkedIn",
@@ -15,8 +15,13 @@ module.exports = [
     icon: "IN",
   },
   {
-    name: "Freelancer",
-    url: "https://www.freelancer.com/u/your-handle",
-    icon: "FR",
+    name: "Email",
+    url: "mailto:you@example.com",
+    icon: "@",
+  },
+  {
+    name: "Resume",
+    url: "/resume.pdf",
+    icon: "R",
   }
 ];
