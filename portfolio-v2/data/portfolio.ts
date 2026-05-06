@@ -73,7 +73,7 @@ export const allProjects: ProjectItem[] = [
   {
     title: 'ContentIO',
     description: 'A content management and publishing platform for creating, organizing, and sharing digital content.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+    image: '/img/projects/contentio.png',
     liveHref: 'https://get-contentio.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
@@ -181,7 +181,7 @@ export const allProjects: ProjectItem[] = [
   {
     title: 'Python Guide',
     description: 'A detailed guide and tutorial for learning Python programming from basics to advanced concepts.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+    image: '/img/projects/project-placeholder.svg',
     liveHref: 'https://python-guide.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Python', 'Educational', 'Documentation'],
@@ -191,7 +191,7 @@ export const allProjects: ProjectItem[] = [
   {
     title: 'C++ OOP',
     description: 'Educational resource covering Object-Oriented Programming concepts in C++ with practical examples.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+    image: '/img/projects/project-placeholder.svg',
     liveHref: 'https://cpp-oop-guide.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['C++', 'OOP', 'Educational'],
