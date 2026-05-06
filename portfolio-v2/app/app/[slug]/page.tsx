@@ -4,6 +4,7 @@ import { ArrowLeft, Download, Github, ExternalLink } from 'lucide-react';
 import { allProjects } from '@/data/portfolio';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { AppScreenshot } from '@/components/shared/app-screenshot';
 
 export default async function AppDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -91,20 +92,7 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
             <h2 className="text-3xl font-bold mb-6">App Screenshots</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {project.appScreenshots.map((screenshot, index) => (
-                <div
-                  key={index}
-                  className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-800 hover:shadow-lg transition-shadow"
-                >
-                  <img
-                    src={screenshot}
-                    alt={`${project.title} screenshot ${index + 1}`}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1512941691920-25bda36dc643?auto=format&fit=crop&w=600&q=80';
-                    }}
-                  />
-                </div>
+                <AppScreenshot key={index} src={screenshot} alt={`${project.title} screenshot ${index + 1}`} index={index} />
               ))}
             </div>
           </div>
