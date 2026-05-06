@@ -24,9 +24,20 @@ export function MusicSection() {
                 <h3 className="truncate font-display text-2xl text-slate-950 dark:text-slate-50">{musicCard.title}</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400">{musicCard.artist}</p>
               </div>
-              <Button type="button" variant="outline" size="icon" className="rounded-full">
-                <Music2 className="h-4 w-4" />
-              </Button>
+              <a
+                href={musicCard.spotifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full hover:scale-110 transition"
+                >
+                  <Music2 className="h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </Card>
         </Reveal>

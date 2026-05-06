@@ -1,35 +1,60 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import { GitHubCalendar } from "react-github-calendar";
 
-import { Reveal } from '@/components/shared/reveal';
-import { SectionHeading } from '@/components/shared/section-heading';
-import { Card } from '@/components/ui/card';
+import { Reveal } from "@/components/shared/reveal";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { Card } from "@/components/ui/card";
 
 export function GitHubActivitySection() {
-  const [cacheKey, setCacheKey] = useState('initial');
+
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setCacheKey(String(Date.now()));
+    setMounted(true);
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <section className="section-shell">
       <div className="section-inner">
-        <SectionHeading eyebrow="GitHub Activity" title="Live contribution chart." description="This chart is pulled directly from your GitHub activity and renders as a live SVG, so there are no fake numbers or extra links above it." />
+
+        <SectionHeading
+          eyebrow="GitHub Activity"
+          title="Live contribution graph."
+          description="Real-time GitHub contribution activity."
+        />
 
         <Reveal>
           <Card className="rounded-[2rem] border-slate-200/80 p-6 dark:border-slate-800 sm:p-8">
-            <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 p-4 dark:border-slate-800">
-              <img
-                src={`https://github-readme-activity-graph.vercel.app/graph?username=PriyanshA0&theme=github-compact&hide_border=true&area=true&v=${cacheKey}`}
-                alt="GitHub contributions chart for PriyanshA0"
-                className="h-auto w-full"
-                loading="lazy"
+
+            <div className="overflow-x-auto">
+
+              <GitHubCalendar
+                username="PriyanshA0"
+                colorScheme="dark"
+                fontSize={14}
+                blockSize={14}
+                blockMargin={5}
+                showWeekdayLabels
+                theme={{
+                  dark: [
+                    "#161b22",
+                    "#0e4429",
+                    "#006d32",
+                    "#26a641",
+                    "#39d353",
+                  ],
+                }}
               />
+
             </div>
+
           </Card>
         </Reveal>
+
       </div>
     </section>
   );
