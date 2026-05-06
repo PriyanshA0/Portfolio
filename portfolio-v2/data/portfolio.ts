@@ -7,6 +7,10 @@ export type SocialLink = {
   label: string;
   href: string;
   icon: 'github' | 'twitter' | 'linkedin' | 'mail' | 'resume' | 'medium';
+  profile?: {
+    bio: string;
+    details?: string;
+  };
 };
 
 export type ProjectItem = {
@@ -49,12 +53,69 @@ export const navigationItems: NavigationItem[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com/PriyanshA0/', icon: 'github' },
-  { label: 'Twitter/X', href: 'https://x.com/Priyanshu_A24', icon: 'twitter' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/priyanshu-mishra-a02a8036b', icon: 'linkedin' },
-  { label: 'Mail', href: 'mailto:priyanshumishra081@gmail.com', icon: 'mail' },
-  { label: 'Contributions', href: 'https://github.com/PriyanshA0/?tab=contributions', icon: 'resume' },
-  { label: 'Medium', href: 'https://medium.com/', icon: 'medium' }
+  {
+    label: 'GitHub',
+    href: 'https://github.com/PriyanshA0/',
+    icon: 'github',
+    profile: {
+      bio: 'Full-stack developer passionate about building practical applications',
+      details: 'Open source contributor | Building with React, Next.js & modern JS'
+    }
+  },
+  {
+    label: 'Twitter/X',
+    href: 'https://x.com/Priyanshu_A24',
+    icon: 'twitter',
+    profile: {
+      bio: 'Sharing thoughts on web development and tech insights',
+      details: 'Web dev | App development | Open source'
+    }
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/priyanshu-mishra-a02a8036b',
+    icon: 'linkedin',
+    profile: {
+      bio: 'Backend Developer | Full-stack developer with focus on frontend',
+      details: 'Intern at Exxat | Building scalable web solutions'
+    }
+  },
+  {
+    label: 'Mail',
+    href: 'mailto:priyanshumishra081@gmail.com',
+    icon: 'mail',
+    profile: {
+      bio: 'Get in touch via email',
+      details: 'priyanshumishra081@gmail.com'
+    }
+  },
+  {
+    label: 'Resume',
+    href: '/resume/Priyanshu Mishra.pdf',
+    icon: 'resume',
+    profile: {
+      bio: 'Download my professional resume',
+      details: 'Full-stack developer CV | Experience & Skills'
+    }
+  },
+  {
+    label: 'Contributions',
+    href: 'https://github.com/PriyanshA0/?tab=contributions',
+    icon: 'resume',
+    profile: {
+      bio: 'View my GitHub contributions and projects',
+      details: '300+ contributions in 2024'
+    }
+  },
+  {
+    label: 'Medium',
+    href: 'https://medium.com/',
+    icon: 'medium',
+    profile: {
+      bio: 'Technical articles and writing',
+      details: 'Coming soon with tech insights'
+    }
+  }
 ];
 
 export const aboutParagraphs = [

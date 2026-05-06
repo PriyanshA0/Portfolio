@@ -4,8 +4,8 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "dev": "node src/server.js",
-    "start": "node src/server.js"
+    "dev": "npm --prefix portfolio-v2 run dev",
+    "start": "npm --prefix portfolio-v2 run start"
   },
   "dependencies": {
     "ejs": "^3.1.10",
