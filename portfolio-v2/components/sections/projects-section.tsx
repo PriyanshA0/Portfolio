@@ -63,12 +63,21 @@ export function ProjectsSection() {
                 </CardContent>
 
                 <CardFooter className="grid grid-cols-2 gap-2 border-t border-slate-200/80 p-0 dark:border-slate-800">
-                  <Button asChild variant="ghost" className="h-14 rounded-none rounded-bl-[2rem] text-slate-700 dark:text-slate-200">
-                    <a href={project.liveHref} target={project.liveHref.startsWith('http') ? '_blank' : undefined} rel={project.liveHref.startsWith('http') ? 'noreferrer' : undefined}>
-                      Visit
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  </Button>
+                  {project.type === 'app' ? (
+                    <Button asChild variant="ghost" className="h-14 rounded-none rounded-bl-[2rem] text-slate-700 dark:text-slate-200">
+                      <Link href={project.liveHref as any}>
+                        Details
+                        <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  ) : (
+                    <Button asChild variant="ghost" className="h-14 rounded-none rounded-bl-[2rem] text-slate-700 dark:text-slate-200">
+                      <a href={project.liveHref} target="_blank" rel="noreferrer">
+                        Visit
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
                   <Button asChild variant="ghost" className="h-14 rounded-none rounded-br-[2rem] text-slate-700 dark:text-slate-200">
                     <a href={project.githubHref} target="_blank" rel="noreferrer">
                       Code

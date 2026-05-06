@@ -265,3 +265,64 @@ portfolio-v2/
 - Configure SEO metadata
 - Create the contact form
 # and Done
+
+Optimizing tool selection...
+
+Read [](file:///home/priyanshu/Projects/Hunter_App_Store/portfolio-v2/components/shared/project-image.tsx)
+
+Read [](file:///home/priyanshu/Projects/Hunter_App_Store/portfolio-v2/components/sections/projects-section.tsx)
+
+Read [](file:///home/priyanshu/Projects/Hunter_App_Store/portfolio-v2/data/portfolio.ts#1-1), lines 1 to 150
+
+Based on your portfolio layout, here are the **ideal image sizes for project cards**:
+
+## **Image Dimensions**
+
+| Specification | Value |
+|---|---|
+| **Aspect Ratio** | 16:10 (widescreen) |
+| **Recommended Sizes** | **1200x750 px** (primary) |
+| | 1600x1000 px (for high DPI/retina) |
+| **Minimum Width** | 640x400 px |
+| **Maximum Width** | 2400x1500 px |
+
+## **Recommended Specs for Your Projects**
+
+Since your grid is responsive:
+- **Mobile** (1 col): 640x400px minimum
+- **Tablet/Desktop** (2-3 cols): 1200x750px ideal
+- **Large screens** (xl+): 1600x1000px optimal
+
+## **File Optimization**
+
+| Format | Use Case | Quality |
+|---|---|---|
+| **WebP** | Modern browsers (best compression) | ~85 quality |
+| **PNG** | Fallback for older browsers | max |
+| **JPG** | Alternative fallback | ~80 quality |
+| **Max file size** | Per image | 200KB |
+
+## **Folder Structure for Your Images**
+
+```
+/public/img/projects/
+├── contentio.png           (1200x750)
+├── talksy.png              (1200x750)
+├── foodshare.png           (1200x750)
+├── html-code.png           (1200x750)
+├── merge-double.png        (1200x750)
+├── monsters.png            (1200x750)
+├── bubble.png              (1200x750)
+├── fun.png                 (1200x750)
+└── html-tutorial.png       (1200x750)
+```
+
+## **Quick Creation Guide**
+
+If you need to create screenshots:
+1. **Take full page screenshot** of each project
+2. **Crop to 16:10 ratio** centered on key UI
+3. **Resize to 1200x750px**
+4. **Optimize with [TinyPNG](https://tinypng.com) or [ImageOptim](https://imageoptim.com)**
+5. **Export as PNG** (or WebP for modern browsers)
+

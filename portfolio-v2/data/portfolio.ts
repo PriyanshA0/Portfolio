@@ -17,6 +17,9 @@ export type ProjectItem = {
   githubHref: string;
   tech: string[];
   year: string;
+  type?: 'website' | 'app'; // 'website' redirects directly, 'app' shows detail page
+  appDownloadUrl?: string; // APK/App download link
+  appScreenshots?: string[]; // Array of screenshot paths for app detail page
 };
 
 export type ExperienceItem = {
@@ -70,101 +73,130 @@ export const allProjects: ProjectItem[] = [
   {
     title: 'ContentIO',
     description: 'A content management and publishing platform for creating, organizing, and sharing digital content.',
-    image: '/img/projects/contentio.png',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
     liveHref: 'https://get-contentio.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
-    year: '2024'
+    year: '2024',
+    type: 'website'
   },
   {
     title: 'Talksy',
     description: 'An interactive chat and communication platform with real-time messaging capabilities.',
-    image: '/img/talksy/screenshots/main.png',
-    liveHref: '/projects/talksy/',
+    image: '/img/talksy/screenshots/1.png',
+    liveHref: '/app/talksy',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML', 'CSS', 'JavaScript', 'Web APIs'],
-    year: '2023'
+    year: '2023',
+    type: 'app',
+    appDownloadUrl: 'https://play.google.com/store/apps/details?id=com.talksy.app',
+    appScreenshots: [
+      '/img/talksy/screenshots/1.png',
+      '/img/talksy/screenshots/2.png',
+      '/img/talksy/screenshots/3.png',
+      '/img/talksy/screenshots/4.png',
+      '/img/talksy/screenshots/5.png',
+      '/img/talksy/screenshots/6.png',
+      '/img/talksy/screenshots/7.png'
+    ]
   },
   {
     title: 'Food Share',
-    description: 'A community platform for sharing and discovering food recipes and culinary experiences.',
-    image: '/img/foodshare/showcase.png',
-    liveHref: '/projects/food-share/',
+    description: 'A community platform for reducing food waste by connecting surplus food with those in need locally.',
+    image: '/img/foodshare/1.jpeg',
+    liveHref: '/app/food-share',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    year: '2023'
+    year: '2023',
+    type: 'app',
+    appDownloadUrl: 'https://drive.google.com/file/d/1XKU9NvKmX20qLkjDujimq28pjPo25-GZ/view?usp=drive_link',
+    appScreenshots: [
+      '/img/foodshare/1.jpeg',
+      '/img/foodshare/2.jpeg',
+      '/img/foodshare/3.jpeg',
+      '/img/foodshare/4.jpeg',
+      '/img/foodshare/5.jpeg'
+    ]
   },
   {
     title: 'Hunter HTML Editor',
     description: 'A lightweight HTML editor built with vanilla JavaScript for quick web development and prototyping.',
-    image: '/img/html_code/editor.png',
-    liveHref: '/projects/hunter-html-editor/',
+    image: '/img/html_code/code1.jpeg',
+    liveHref: 'https://hunter-html-editor-theta.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML', 'CSS', 'JavaScript', 'DOM API'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   },
   {
     title: 'Bubble Pixel Game',
     description: 'An interactive bubble-popping game with engaging gameplay mechanics and smooth animations.',
-    image: '/img/bubble/game.png',
-    liveHref: '/projects/bubble-pixel/',
+    image: '/img/bubble/bubble1.png',
+    liveHref: 'https://bubble-pixel-game.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML5 Canvas', 'JavaScript', 'Game Dev'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   },
   {
     title: 'Merge and Double',
     description: 'A puzzle game where you merge tiles to reach higher numbers, inspired by 2048.',
-    image: '/img/Merge_and_double/game.png',
-    liveHref: '/projects/merge-and-double/',
+    image: '/img/Merge_and_double/merge1.jpeg',
+    liveHref: 'https://merge-and-double-game.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   },
   {
     title: 'Find Monsters',
     description: 'An educational puzzle game for learning and identifying different monster characters.',
-    image: '/img/monsters/main.png',
-    liveHref: '/projects/find-monsters/',
+    image: '/img/monsters/monster1.jpeg',
+    liveHref: 'https://find-monsters-game.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   },
   {
     title: 'Fun Learn',
     description: 'An interactive learning platform designed to make education engaging and enjoyable.',
-    image: '/img/fun/learning.png',
-    liveHref: '/projects/fun-learn/',
+    image: '/img/fun/fun1.jpeg',
+    liveHref: 'https://fun-learn-platform.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   },
   {
     title: 'HTML CSS Tutorial',
     description: 'A comprehensive tutorial website for learning HTML and CSS fundamentals with practical examples.',
-    image: '/img/html_code/tutorial.png',
-    liveHref: '/projects/html-css-tutorial/',
+    image: '/img/html_code/code2.jpeg',
+    liveHref: 'https://html-css-tutorial.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML', 'CSS', 'Educational'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   },
   {
     title: 'Python Guide',
     description: 'A detailed guide and tutorial for learning Python programming from basics to advanced concepts.',
-    image: '/img/python/guide.png',
-    liveHref: '/projects/python-guide/',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+    liveHref: 'https://python-guide.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Python', 'Educational', 'Documentation'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   },
   {
     title: 'C++ OOP',
     description: 'Educational resource covering Object-Oriented Programming concepts in C++ with practical examples.',
-    image: '/img/cpp/oop.png',
-    liveHref: '/projects/cpp-oop/',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+    liveHref: 'https://cpp-oop-guide.vercel.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['C++', 'OOP', 'Educational'],
-    year: '2023'
+    year: '2023',
+    type: 'website'
   }
 ];
 
