@@ -15,6 +15,7 @@ import { GitHubActivitySection } from '@/components/sections/github-activity-sec
 import { HeroSection } from '@/components/sections/hero-section';
 import { MusicSection } from '@/components/sections/music-section';
 import { ProjectsSection } from '@/components/sections/projects-section';
+import AnimateProvider from '@/components/shared/animate-provider';
 import { scrollToId, scrollToTop } from '@/lib/scroll';
 import { useTheme } from 'next-themes';
 
@@ -78,6 +79,7 @@ export function PortfolioShell() {
       />
 
       <MobileMenu open={menuOpen} onOpenChange={setMenuOpen} onNavigate={navigate} onToggleTheme={toggleTheme} />
+      <AnimateProvider />
     </>
   );
 }

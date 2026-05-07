@@ -86,4 +86,55 @@ body {
   .section-lead {
     @apply max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-400 sm:text-lg;
   }
+
+  /* Animations */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes float-y {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 650ms cubic-bezier(.16,.84,.24,1) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 500ms ease both;
+  }
+
+  .animate-float {
+    animation: float-y 6s ease-in-out infinite;
+  }
+
+  .animate-pop {
+    transform-origin: center;
+    animation: pop 420ms cubic-bezier(.2,.9,.25,1) both;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(.96); opacity: 0; }
+    60% { transform: scale(1.03); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+
+  .animate-delay-1 { animation-delay: 80ms; }
+  .animate-delay-2 { animation-delay: 160ms; }
+  .animate-delay-3 { animation-delay: 240ms; }
+  .animate-delay-4 { animation-delay: 320ms; }
+
+  /* Make animated elements initially invisible until animated */
+  .animate-fade-up, .animate-fade-in, .animate-pop { opacity: 0; }
+
+  /* Visible helper used by the JS observer */
+  .animate-visible { opacity: 1 !important; transform: none !important; }
 }
