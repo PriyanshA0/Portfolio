@@ -34,7 +34,7 @@ type LiveProfile = {
   stats?: string;
 };
 
-function getFallbackAvatar(link: (typeof socialLinks)[number]) {
+function getFallbackAvatar(link: (typeof socialLinks)[number]): string | undefined {
   const platform = link.profile?.platform;
   const username = link.profile?.username;
 
@@ -58,7 +58,7 @@ function getFallbackAvatar(link: (typeof socialLinks)[number]) {
     return 'https://unavatar.io/medium.com';
   }
 
-  return null;
+  return undefined;
 }
 
 export function ConnectSection() {
