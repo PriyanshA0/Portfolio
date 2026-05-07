@@ -161,6 +161,7 @@ export const aboutPoints = [
 ];
 
 export const allProjects: ProjectItem[] = [
+  /*
   {
     title: 'Code Basics',
     description: 'A VS Code-style learning environment with 60 curated programming problems across operators, loops, functions, conditions, arrays, strings, and OOP.',
@@ -171,6 +172,7 @@ export const allProjects: ProjectItem[] = [
     year: '2026',
     type: 'app'
   },
+  */
   {
     title: 'ContentIO',
     description: 'A content management and publishing platform for creating, organizing, and sharing digital content.',
