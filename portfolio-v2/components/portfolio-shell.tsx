@@ -9,6 +9,7 @@ import { AboutSection } from '@/components/sections/about-section';
 import { ConnectSection } from '@/components/sections/connect-section';
 import { EducationSection } from '@/components/sections/education-section';
 import { ExperienceSection } from '@/components/sections/experience-section';
+import { FavMoviesSection } from '@/components/sections/fav-movies-section';
 import { FooterSection } from '@/components/sections/footer-section';
 import { GitHubActivitySection } from '@/components/sections/github-activity-section';
 import { HeroSection } from '@/components/sections/hero-section';
@@ -58,12 +59,13 @@ export function PortfolioShell() {
         </section>
 
         <AboutSection />
-        <ProjectsSection />
+        <MusicSection />
+        <FavMoviesSection />
+        <ConnectSection />
+        <GitHubActivitySection />
         <ExperienceSection />
         <EducationSection />
-        <GitHubActivitySection />
-        <MusicSection />
-        <ConnectSection />
+        <ProjectsSection />
         <FooterSection />
       </main>
 

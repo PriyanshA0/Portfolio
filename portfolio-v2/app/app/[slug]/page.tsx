@@ -89,10 +89,19 @@ export default async function AppDetailPage({ params }: { params: Promise<{ slug
         {/* Screenshots Gallery */}
         {project.appScreenshots && project.appScreenshots.length > 0 && (
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">App Screenshots</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="mb-4 flex items-end justify-between gap-3">
+              <h2 className="text-3xl font-bold">App Screenshots</h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400">Swipe or scroll left-right</p>
+            </div>
+            <div className="-mx-1 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-3 sm:gap-4">
               {project.appScreenshots.map((screenshot, index) => (
-                <AppScreenshot key={index} src={screenshot} alt={`${project.title} screenshot ${index + 1}`} index={index} />
+                <AppScreenshot
+                  key={index}
+                  src={screenshot}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  index={index}
+                  className="shrink-0 snap-start"
+                />
               ))}
             </div>
           </div>

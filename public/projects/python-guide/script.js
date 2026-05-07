@@ -1,3 +1,0 @@
-
-  hljs.highlightAll();
-

@@ -19,12 +19,12 @@ export function GitHubActivitySection() {
         <SectionHeading eyebrow="GitHub Activity" title="Live contribution chart." description="This chart is pulled directly from your GitHub activity and renders as a live SVG, so there are no fake numbers or extra links above it." />
 
         <Reveal>
-          <Card className="rounded-[2rem] border-slate-200/80 p-6 dark:border-slate-800 sm:p-8">
-            <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 p-4 dark:border-slate-800">
+          <Card className="rounded-[2rem] border-slate-200/80 p-4 dark:border-slate-800 sm:p-6 lg:p-8">
+            <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-950 p-2 dark:border-slate-800 sm:p-3 lg:p-4">
               <img
                 src={`https://github-readme-activity-graph.vercel.app/graph?username=PriyanshA0&theme=github-compact&hide_border=true&area=true&v=${cacheKey}`}
                 alt="GitHub contributions chart for PriyanshA0"
-                className="h-auto w-full"
+                className="h-auto w-full min-h-[280px] sm:min-h-[320px]"
                 loading="lazy"
               />
             </div>

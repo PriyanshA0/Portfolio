@@ -1,14 +1,22 @@
 'use client';
 
+import { cn } from '@/lib/utils';
+
 interface AppScreenshotProps {
   src: string;
   alt: string;
   index: number;
+  className?: string;
 }
 
-export function AppScreenshot({ src, alt, index }: AppScreenshotProps) {
+export function AppScreenshot({ src, alt, index, className }: AppScreenshotProps) {
   return (
-    <div className="relative aspect-[9/16] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-800 hover:shadow-lg transition-shadow">
+    <div
+      className={cn(
+        'relative w-[160px] sm:w-[175px] md:w-[190px] aspect-[9/16] max-h-[340px] rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-800 hover:shadow-lg transition-shadow',
+        className
+      )}
+    >
       <img
         src={src}
         alt={alt}

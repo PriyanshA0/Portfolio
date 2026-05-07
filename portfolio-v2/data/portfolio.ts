@@ -8,6 +8,11 @@ export type SocialLink = {
   href: string;
   icon: 'github' | 'twitter' | 'linkedin' | 'mail' | 'resume' | 'medium';
   profile?: {
+    name?: string;
+    handle?: string;
+    avatarUrl?: string;
+    platform?: 'github' | 'twitter' | 'linkedin' | 'medium' | 'mail' | 'resume';
+    username?: string;
     bio: string;
     details?: string;
   };
@@ -58,6 +63,10 @@ export const socialLinks: SocialLink[] = [
     href: 'https://github.com/PriyanshA0/',
     icon: 'github',
     profile: {
+      name: 'Priyanshu Mishra',
+      handle: '@PriyanshA0',
+      platform: 'github',
+      username: 'PriyanshA0',
       bio: 'Full-stack developer passionate about building practical applications',
       details: 'Open source contributor | Building with React, Next.js & modern JS'
     }
@@ -67,6 +76,10 @@ export const socialLinks: SocialLink[] = [
     href: 'https://x.com/Priyanshu_A24',
     icon: 'twitter',
     profile: {
+      name: 'Priyanshu Mishra',
+      handle: '@Priyanshu_A24',
+      platform: 'twitter',
+      username: 'Priyanshu_A24',
       bio: 'Sharing thoughts on web development and tech insights',
       details: 'Web dev | App development | Open source'
     }
@@ -76,6 +89,10 @@ export const socialLinks: SocialLink[] = [
     href: 'https://www.linkedin.com/in/priyanshu-mishra-a02a8036b',
     icon: 'linkedin',
     profile: {
+      name: 'Priyanshu Mishra',
+      handle: 'in/priyanshu-mishra-a02a8036b',
+      platform: 'linkedin',
+      username: 'priyanshu-mishra-a02a8036b',
       bio: 'Backend Developer | Full-stack developer with focus on frontend',
       details: 'Intern at Exxat | Building scalable web solutions'
     }
@@ -85,6 +102,9 @@ export const socialLinks: SocialLink[] = [
     href: 'mailto:priyanshumishra081@gmail.com',
     icon: 'mail',
     profile: {
+      name: 'Priyanshu Mishra',
+      handle: 'priyanshumishra081@gmail.com',
+      platform: 'mail',
       bio: 'Get in touch via email',
       details: 'priyanshumishra081@gmail.com'
     }
@@ -94,6 +114,9 @@ export const socialLinks: SocialLink[] = [
     href: '/resume/Priyanshu Mishra.pdf',
     icon: 'resume',
     profile: {
+      name: 'Priyanshu Mishra',
+      handle: 'Updated CV',
+      platform: 'resume',
       bio: 'Download my professional resume',
       details: 'Full-stack developer CV | Experience & Skills'
     }
@@ -103,6 +126,10 @@ export const socialLinks: SocialLink[] = [
     href: 'https://github.com/PriyanshA0/?tab=contributions',
     icon: 'resume',
     profile: {
+      name: 'Priyanshu Mishra',
+      handle: '@PriyanshA0',
+      platform: 'github',
+      username: 'PriyanshA0',
       bio: 'View my GitHub contributions and projects',
       details: '300+ contributions in 2024'
     }
@@ -112,6 +139,9 @@ export const socialLinks: SocialLink[] = [
     href: 'https://medium.com/',
     icon: 'medium',
     profile: {
+      name: 'Priyanshu Mishra',
+      handle: 'Medium',
+      platform: 'medium',
       bio: 'Technical articles and writing',
       details: 'Coming soon with tech insights'
     }
@@ -131,6 +161,16 @@ export const aboutPoints = [
 ];
 
 export const allProjects: ProjectItem[] = [
+  {
+    title: 'Code Basics',
+    description: 'A VS Code-style learning environment with 60 curated programming problems across operators, loops, functions, conditions, arrays, strings, and OOP.',
+    image: '/img/projects/project-placeholder.svg',
+    liveHref: '/basics',
+    githubHref: 'https://github.com/PriyanshA0/',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    year: '2026',
+    type: 'app'
+  },
   {
     title: 'ContentIO',
     description: 'A content management and publishing platform for creating, organizing, and sharing digital content.',
@@ -174,7 +214,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: 'https://open-gle.web.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Next.js', 'React', 'Firebase', 'Chat'],
-    year: '2026',
+    year: '2025',
     type: 'website'
   },
   {
@@ -184,7 +224,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: 'https://solve-surprise-puzzle.web.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['JavaScript', 'Animation', 'UI Effects'],
-    year: '2026',
+    year: '2024',
     type: 'website'
   },
   {
@@ -194,7 +234,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: 'https://web-cam-62e40.web.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['JavaScript', 'Media APIs', 'Canvas'],
-    year: '2026',
+    year: '2025',
     type: 'website'
   },
   {
@@ -204,7 +244,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: 'https://live-streak.web.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['React', 'JavaScript', 'Game Logic'],
-    year: '2026',
+    year: '2025',
     type: 'website'
   },
   {
@@ -252,7 +292,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: '/app/hunter-html-editor',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Flutter', 'Dart', 'Node.js'],
-    year: '2023',
+    year: '2024',
     type: 'app',
     appDownloadUrl: 'https://drive.google.com/uc?export=download&id=16GriqbAZjhs-Vqw_B7co5U7l6BpJsajY',
     appScreenshots: [
@@ -270,7 +310,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: 'https://bubble-pixel.web.app/',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['HTML5 Canvas', 'JavaScript', 'Game Dev'],
-    year: '2023',
+    year: '2024',
     type: 'website'
   },
   {
@@ -280,7 +320,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: '/app/merge-and-double',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Flutter', 'Dart', 'Node.js'],
-    year: '2023',
+    year: '2024',
     type: 'app',
     appDownloadUrl: 'https://drive.google.com/uc?export=download&id=1uxM5rUS8F_FddJ1lF5SHlThn43TQEb-C',
     appScreenshots: [
@@ -296,7 +336,7 @@ export const allProjects: ProjectItem[] = [
     liveHref: '/app/fun-learn',
     githubHref: 'https://github.com/PriyanshA0/',
     tech: ['Flutter', 'Dart', 'Node.js'],
-    year: '2023',
+    year: '2024',
     type: 'app',
     appDownloadUrl: 'https://drive.google.com/uc?export=download&id=14rB8vIjyNzGz-D3qmsuM-Jp9KcnnBby2',
     appScreenshots: [
@@ -404,6 +444,15 @@ export const musicCard = {
   label: 'Currently working on',
   cover: '/assets/My-Img/music.png',
   spotifyUrl: 'https://open.spotify.com/track/6LAitVJIwyCy4bJGN9TIhn?si=DAAL6gM0QI-Fq4-1jAoxIQ'
+};
+
+export const favoriteMovie = {
+  title: 'Spirited Away',
+  type: 'Anime',
+  label: 'My favorite',
+  cover: '/assets/My-Img/SpiritedAway.gif',
+  description: 'A masterpiece of Studio Ghibli that follows Chihiro, a young girl who enters a magical world after her parents are turned into pigs. The film beautifully explores themes of identity, courage, and growing up through stunning hand-drawn animation.',
+  whyFavorite: 'I love Spirited Away for its breathtaking visuals, compelling storytelling, and the way it captures the essence of courage and self-discovery. The character development and the emotional journey resonate deeply with me, making it timeless and inspiring.'
 };
 
 export const footerNote = '© 2025 Priyanshu Mishra. Built with passion and a lot of code.';
