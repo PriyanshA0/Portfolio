@@ -42,7 +42,7 @@ export function FavMoviesSection() {
                   <div>
                     <h4 className="mb-2 font-semibold text-slate-900 dark:text-slate-50 flex items-center gap-2">
                       <Film className="h-4 w-4" />
-                      What's Inside
+                      What&apos;s Inside
                     </h4>
                     <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">
                       {favoriteMovie.description}
@@ -50,7 +50,7 @@ export function FavMoviesSection() {
                   </div>
 
                   <div>
-                    <h4 className="mb-2 font-semibold text-slate-900 dark:text-slate-50">Why It's My Favorite</h4>
+                    <h4 className="mb-2 font-semibold text-slate-900 dark:text-slate-50">Why It&apos;s My Favorite</h4>
                     <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">
                       {favoriteMovie.whyFavorite}
                     </p>
