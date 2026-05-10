@@ -14,7 +14,6 @@ import { FooterSection } from '@/components/sections/footer-section';
 import { GitHubActivitySection } from '@/components/sections/github-activity-section';
 import { HeroSection } from '@/components/sections/hero-section';
 import { MusicSection } from '@/components/sections/music-section';
-import { ProjectsSection } from '@/components/sections/projects-section';
 import AnimateProvider from '@/components/shared/animate-provider';
 import { scrollToId, scrollToTop } from '@/lib/scroll';
 import { useTheme } from 'next-themes';
@@ -66,7 +65,6 @@ export function PortfolioShell() {
         <GitHubActivitySection />
         <ExperienceSection />
         <EducationSection />
-        <ProjectsSection />
         <FooterSection />
       </main>
 

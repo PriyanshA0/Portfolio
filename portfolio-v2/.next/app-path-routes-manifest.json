@@ -1,0 +1,8 @@
+{
+  "/api/visits/route": "/api/visits",
+  "/_not-found/page": "/_not-found",
+  "/page": "/",
+  "/app/[slug]/page": "/app/[slug]",
+  "/projects/page": "/projects",
+  "/basics/page": "/basics"
+}
