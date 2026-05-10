@@ -1,8 +1,8 @@
 {
-  "/api/visits/route": "/api/visits",
   "/_not-found/page": "/_not-found",
+  "/api/visits/route": "/api/visits",
   "/page": "/",
   "/app/[slug]/page": "/app/[slug]",
-  "/projects/page": "/projects",
-  "/basics/page": "/basics"
+  "/basics/page": "/basics",
+  "/projects/page": "/projects"
 }
